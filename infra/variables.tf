@@ -21,7 +21,7 @@ variable "name_prefix" {
 }
 
 variable "tags" {
-  type    = map(string)
+  type = map(string)
   default = {
     project     = "netcoreconf-barcelona-2026"
     environment = "demo"
