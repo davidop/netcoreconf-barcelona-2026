@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: seriph
 title: "El aprendiz de agente · NetCoreConf Barcelona 2026"
 info: |
   Magia, telemetría y gobernanza bajo control · Érika Cepeda y David Oliva Paredes
