@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.UseUrls(Environment.GetEnvironmentVariable("MERLINOPS_URL") ?? "http://localhost:5080");
 builder.Services.AddSingleton(new PolicyEngine(Path.Combine(AppContext.BaseDirectory, "guardrails.yaml")));
 builder.Services.AddSingleton<SimulationEngine>();
+builder.Services.AddSingleton<MafSimulationEngine>();
 builder.Services.AddSingleton(new SqliteRunStore(
     Environment.GetEnvironmentVariable("MERLINOPS_DB")
     ?? Path.Combine(AppContext.BaseDirectory, "merlinops.db")));
@@ -45,6 +46,16 @@ app.MapPost("/api/runs/simulate", async (StartRun request, SimulationEngine engi
     if (request.Scenario is null || !SimulationEngine.Scenarios.Any(s => s.Id == request.Scenario))
         return Results.BadRequest(new { error = "Unknown scenario" });
     var run = engine.Execute(request.Scenario);
+    await store.SaveAsync(run, ct);
+    return Results.Created($"/api/runs/{run.Id}", run);
+});
+
+// Microsoft Agent Framework is executed locally; all executors return SYNTHETIC data.
+app.MapPost("/api/runs/maf-simulate", async (StartRun request, MafSimulationEngine engine, SqliteRunStore store, CancellationToken ct) =>
+{
+    if (request.Scenario is null || !SimulationEngine.Scenarios.Any(s => s.Id == request.Scenario))
+        return Results.BadRequest(new { error = "Unknown scenario" });
+    var run = await engine.ExecuteAsync(request.Scenario);
     await store.SaveAsync(run, ct);
     return Results.Created($"/api/runs/{run.Id}", run);
 });

@@ -61,7 +61,7 @@ async function simulateViaSse() {
   position.value = 0
   provenance.value = 'SIMULATED'
   try {
-    const response = await fetch('http://localhost:5080/api/runs/simulate', {
+    const response = await fetch('http://localhost:5080/api/runs/maf-simulate', {
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({scenario:scenarios[selected.value].id}),
     })

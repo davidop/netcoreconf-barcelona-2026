@@ -67,3 +67,28 @@ public sealed class SimulationTests
         finally { if (File.Exists(path)) File.Delete(path); }
     }
 }
+
+
+public sealed class MafWorkflowTests
+{
+    private static PolicyEngine Policy() => new(Path.Combine(AppContext.BaseDirectory, "guardrails.yaml"));
+
+    [Theory]
+    [InlineData("finops-success", "COMPLETED")]
+    [InlineData("policy-block", "BLOCKED")]
+    [InlineData("quality-rollback", "ROLLED_BACK")]
+    public async Task Parallel_maf_guardians_are_real_but_cloud_operations_remain_simulated(string scenario, string status)
+    {
+        var run = await new MafSimulationEngine(Policy()).ExecuteAsync(scenario);
+        Assert.Equal(status, run.Status);
+        Assert.Equal("SIMULATED", run.Mode);
+        var completions = run.Events.Where(e => e.Kind == "agent.completed").ToArray();
+        Assert.Equal(4, completions.Length);
+        Assert.Equal(4, completions.Select(e => e.Agent).Distinct().Count());
+        if (scenario == "policy-block")
+        {
+            Assert.DoesNotContain(run.Events, e => e.Kind == "approval.simulated");
+            Assert.DoesNotContain(run.Events, e => e.Kind == "deployment.simulated");
+        }
+    }
+}
