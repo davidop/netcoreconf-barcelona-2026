@@ -16,3 +16,4 @@
 .terraform/
 *.tfvars
 !*.tfvars.example
+replay-review/

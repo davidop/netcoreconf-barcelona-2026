@@ -46,6 +46,16 @@ jobs:
           path: slides/dist
           retention-days: 7
 
+  replay-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify Replay sanitizer behavior (local synthetic tests only)
+        run: python -m unittest discover -s tools/tests -v
+
   terraform:
     runs-on: ubuntu-latest
     steps:
