@@ -3,19 +3,23 @@ variable "subscription_id" {
   description = "Only for separately authorized Azure usage"
   default     = ""
 }
+
 variable "deploy_enabled" {
   type        = bool
   description = "Always false until explicit subsequent authorization"
   default     = false
 }
+
 variable "location" {
   type    = string
   default = "swedencentral"
 }
+
 variable "name_prefix" {
   type    = string
   default = "merlinops-ncc26"
 }
+
 variable "tags" {
   type    = map(string)
   default = {

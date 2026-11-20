@@ -1,4 +1,5 @@
 using MerlinOps.Api;
+using Xunit;
 
 namespace MerlinOps.Tests;
 
