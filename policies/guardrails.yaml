@@ -1,0 +1,7 @@
+# Policy-as-Code for the simulated demo. Cloud writes stay disabled.
+# These values are example thresholds, NOT measured Foundry billing or actual quality evaluations.
+max_estimated_usd_per_run: 1.0
+min_quality_score: 0.85
+max_latency_ms: 3000
+human_approval_required: true
+allow_cloud_writes: false
