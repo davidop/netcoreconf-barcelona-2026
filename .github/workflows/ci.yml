@@ -54,7 +54,7 @@ jobs:
         with:
           terraform_version: '1.10.5'
       - name: Format check
-        run: terraform -chdir=infra fmt -check -recursive
+        run: terraform -chdir=infra fmt -check -diff -recursive
       - name: Init without backend (no Azure credentials)
         run: terraform -chdir=infra init -backend=false -input=false
       - name: Validate syntax (never apply)
