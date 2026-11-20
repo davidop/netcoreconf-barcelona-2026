@@ -1,0 +1,61 @@
+name: MerlinOps CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore tests
+        run: dotnet restore tests/MerlinOps.Tests/MerlinOps.Tests.csproj
+      - name: Build API and tests
+        run: dotnet build tests/MerlinOps.Tests/MerlinOps.Tests.csproj --no-restore -c Release
+      - name: Test simulated Guardians and guardrails
+        run: dotnet test tests/MerlinOps.Tests/MerlinOps.Tests.csproj --no-restore -c Release --logger 'console;verbosity=normal'
+      - name: Compile and execute Microsoft Agent Framework preview smoke
+        run: dotnet run --project src/MerlinOps.AgentFrameworkAdapter/MerlinOps.AgentFrameworkAdapter.csproj -c Release
+      - name: Build Aspire AppHost
+        run: dotnet build src/MerlinOps.AppHost/MerlinOps.AppHost.csproj -c Release
+
+  slidev:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: slides
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slidev-static-preview
+          path: slides/dist
+          retention-days: 7
+
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.10.5'
+      - name: Format check
+        run: terraform -chdir=infra fmt -check -recursive
+      - name: Init without backend (no Azure credentials)
+        run: terraform -chdir=infra init -backend=false -input=false
+      - name: Validate syntax (never apply)
+        run: terraform -chdir=infra validate
