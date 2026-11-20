@@ -1,26 +1,26 @@
 variable "subscription_id" {
-  type = string
+  type        = string
   description = "Only for separately authorized Azure usage"
-  default = ""
+  default     = ""
 }
 variable "deploy_enabled" {
-  type = bool
+  type        = bool
   description = "Always false until explicit subsequent authorization"
-  default = false
+  default     = false
 }
 variable "location" {
-  type = string
+  type    = string
   default = "swedencentral"
 }
 variable "name_prefix" {
-  type = string
+  type    = string
   default = "merlinops-ncc26"
 }
 variable "tags" {
-  type = map(string)
+  type    = map(string)
   default = {
-    project = "netcoreconf-barcelona-2026"
+    project     = "netcoreconf-barcelona-2026"
     environment = "demo"
-    managed_by = "terraform"
+    managed_by  = "terraform"
   }
 }

@@ -1,5 +1,5 @@
 output "deployment_enabled" {
-  value = var.deploy_enabled
+  value       = var.deploy_enabled
   description = "Only an explicit opt-in declares resources"
 }
 output "container_environment_id" {

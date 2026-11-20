@@ -84,4 +84,4 @@ app.MapGet("/api/runs/{id}/stream", async (string id, SqliteRunStore store, Http
 app.Run();
 
 public sealed record StartRun(string? Scenario);
-public partial class Program;
+public partial class Program { }

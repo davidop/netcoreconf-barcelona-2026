@@ -11,5 +11,6 @@
     <PackageReference Include="xunit" Version="2.9.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
     <ProjectReference Include="../../src/MerlinOps.Api/MerlinOps.Api.csproj" />
+    <Content Include="../../policies/guardrails.yaml" Link="guardrails.yaml" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

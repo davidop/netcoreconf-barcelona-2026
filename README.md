@@ -37,7 +37,7 @@ dotnet run --project src/MerlinOps.Api
 
 # Presentación — terminal independiente
 cd slides
-npm ci
+npm install
 npm run dev
 ```
 
