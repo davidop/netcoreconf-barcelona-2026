@@ -1,0 +1,260 @@
+{
+  "schema": "merlinops.replay.v1",
+  "provenance": "SYNTHETIC_FIXTURE",
+  "disclosure": "Fixture authored for presentation tests. Not captured from Azure, Foundry or Teams.",
+  "scenarios": [
+    {
+      "id": "finops-success",
+      "name": "01 · El ahorro",
+      "status": "COMPLETED",
+      "events": [
+        {
+          "sequence": 1,
+          "kind": "mission.started",
+          "agent": "MerlinOps",
+          "message": "Iniciando misión sintética.",
+          "gate": "NONE",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 2,
+          "kind": "plan.created",
+          "agent": "MerlinOps",
+          "message": "Evaluar calidad, latencia y costes.",
+          "gate": "NONE",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 3,
+          "kind": "delegation.parallel",
+          "agent": "MerlinOps",
+          "message": "Delegación a cuatro guardianes.",
+          "gate": "NONE",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 4,
+          "kind": "agent.observed",
+          "agent": "TelemetryGuardian",
+          "message": "p95 ficticio: 1.850 ms.",
+          "gate": "NONE",
+          "metric": 1850,
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 5,
+          "kind": "agent.estimated",
+          "agent": "FinOpsGuardian",
+          "message": "Coste estimado sintético: 0,42 USD.",
+          "gate": "NONE",
+          "metric": 0.42,
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 6,
+          "kind": "agent.evaluated",
+          "agent": "QualityGuardian",
+          "message": "Calidad sintética: 0,94.",
+          "gate": "NONE",
+          "metric": 0.94,
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 7,
+          "kind": "gate.evaluated",
+          "agent": "GovernanceGuardian",
+          "message": "Policies verificadas. Requiere aprobación.",
+          "gate": "PASS",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 8,
+          "kind": "approval.requested",
+          "agent": "GovernanceGuardian",
+          "message": "Solicitud de aprobación ficticia.",
+          "gate": "PENDING",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 9,
+          "kind": "approval.simulated",
+          "agent": "HumanReviewer",
+          "message": "Aprobación PREGRABADA ficticia.",
+          "gate": "SIMULATED",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 10,
+          "kind": "deployment.simulated",
+          "agent": "DeliveryGuardian",
+          "message": "Canary sintético 10% → 50% → 100%.",
+          "gate": "SIMULATED",
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 11,
+          "kind": "finops.projected",
+          "agent": "FinOpsGuardian",
+          "message": "Ahorro relativo proyectado ficticio: 24%.",
+          "gate": "PASS",
+          "metric": 24,
+          "traceId": "synthetic-finops-success"
+        },
+        {
+          "sequence": 12,
+          "kind": "mission.completed",
+          "agent": "MerlinOps",
+          "message": "Flujo terminado sin modificar Azure.",
+          "gate": "PASS",
+          "traceId": "synthetic-finops-success"
+        }
+      ]
+    },
+    {
+      "id": "policy-block",
+      "name": "02 · El escudo",
+      "status": "BLOCKED",
+      "events": [
+        {
+          "sequence": 1,
+          "kind": "mission.started",
+          "agent": "MerlinOps",
+          "message": "Iniciando misión sintética.",
+          "gate": "NONE",
+          "traceId": "synthetic-policy-block"
+        },
+        {
+          "sequence": 2,
+          "kind": "delegation.parallel",
+          "agent": "MerlinOps",
+          "message": "Guardianes analizan la propuesta.",
+          "gate": "NONE",
+          "traceId": "synthetic-policy-block"
+        },
+        {
+          "sequence": 3,
+          "kind": "agent.observed",
+          "agent": "TelemetryGuardian",
+          "message": "p95 ficticio: 1.850 ms.",
+          "gate": "NONE",
+          "metric": 1850,
+          "traceId": "synthetic-policy-block"
+        },
+        {
+          "sequence": 4,
+          "kind": "agent.estimated",
+          "agent": "FinOpsGuardian",
+          "message": "Coste sintético: 0,42 USD.",
+          "gate": "NONE",
+          "metric": 0.42,
+          "traceId": "synthetic-policy-block"
+        },
+        {
+          "sequence": 5,
+          "kind": "agent.evaluated",
+          "agent": "QualityGuardian",
+          "message": "Calidad sintética: 0,94.",
+          "gate": "NONE",
+          "metric": 0.94,
+          "traceId": "synthetic-policy-block"
+        },
+        {
+          "sequence": 6,
+          "kind": "gate.evaluated",
+          "agent": "GovernanceGuardian",
+          "message": "Riesgo crítico. Regla fail-closed.",
+          "gate": "DENY",
+          "traceId": "synthetic-policy-block"
+        },
+        {
+          "sequence": 7,
+          "kind": "mission.blocked",
+          "agent": "MerlinOps",
+          "message": "Bloqueado. Sin aprobación ni despliegue.",
+          "gate": "DENY",
+          "traceId": "synthetic-policy-block"
+        }
+      ]
+    },
+    {
+      "id": "quality-rollback",
+      "name": "03 · La reversión",
+      "status": "ROLLED_BACK",
+      "events": [
+        {
+          "sequence": 1,
+          "kind": "mission.started",
+          "agent": "MerlinOps",
+          "message": "Iniciando misión sintética.",
+          "gate": "NONE",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 2,
+          "kind": "plan.created",
+          "agent": "MerlinOps",
+          "message": "Preparando mejora con rollback.",
+          "gate": "NONE",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 3,
+          "kind": "delegation.parallel",
+          "agent": "MerlinOps",
+          "message": "Delegación a los guardianes.",
+          "gate": "NONE",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 4,
+          "kind": "gate.evaluated",
+          "agent": "GovernanceGuardian",
+          "message": "Evaluación inicial satisfactoria.",
+          "gate": "PASS",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 5,
+          "kind": "approval.simulated",
+          "agent": "HumanReviewer",
+          "message": "Aprobación pregrabada ficticia.",
+          "gate": "SIMULATED",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 6,
+          "kind": "deployment.simulated",
+          "agent": "DeliveryGuardian",
+          "message": "Canary sintético desplegado.",
+          "gate": "SIMULATED",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 7,
+          "kind": "telemetry.regression",
+          "agent": "QualityGuardian",
+          "message": "Calidad sintética degradada a 0,73.",
+          "gate": "DENY",
+          "metric": 0.73,
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 8,
+          "kind": "rollback.simulated",
+          "agent": "DeliveryGuardian",
+          "message": "Reversión sintética preautorizada.",
+          "gate": "SIMULATED",
+          "traceId": "synthetic-quality-rollback"
+        },
+        {
+          "sequence": 9,
+          "kind": "mission.recovered",
+          "agent": "MerlinOps",
+          "message": "Calidad recuperada, Azure sin cambios.",
+          "gate": "PASS",
+          "traceId": "synthetic-quality-rollback"
+        }
+      ]
+    }
+  ]
+}
