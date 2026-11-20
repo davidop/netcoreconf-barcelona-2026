@@ -49,3 +49,7 @@ Every event carries sequence, kind, agent, message, gate and traceId; metric is 
 - Microsoft Agent Framework workflows: https://learn.microsoft.com/agent-framework/get-started/workflows
 - Copilot Studio SDK integration and harness support caveat: https://learn.microsoft.com/microsoft-365/agents-sdk/integrate-with-mcs
 - Slidev static hosting: https://sli.dev/guide/hosting
+
+## Local Replay privacy preparation
+
+`tools/sanitize_replay.py` generates an unpublished `REVIEW_REQUIRED` candidate, checked against tests in CI. It does not publish authentic events, guarantee full anonymization or replace mandatory manual approval.

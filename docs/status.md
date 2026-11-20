@@ -9,3 +9,5 @@ The code and build artefacts determine status. A feature is not verified until t
 **Not implemented or verified:** real Foundry telemetry and model routing, M365 Agents SDK to GitHub Copilot Harness, actual multiagent AI planning, Entra authentication, Teams HITL authorization, Azure backend policy, Azure state store, production OTel, measured cost savings, real deployment and rollback, authentic captured telemetry, conference dress rehearsal.
 
 **Never performed:** creating or modifying resources in Azure. Explicit new user authorization is needed for any cloud write.
+
+**SDK integration detail:** `src/MerlinOps.Api/MafSimulationEngine.cs` uses Microsoft Agent Framework's real workflow builder and parallel fan-out to four deterministic local functions; its `SIMULATED` event stream is exposed via `/api/runs/maf-simulate`. This is not live generative-agent orchestration and must never be described as such. **Replay privacy:** `tools/sanitize_replay.py` produces local candidates stamped `REVIEW_REQUIRED`; no automatic public publishing occurs.

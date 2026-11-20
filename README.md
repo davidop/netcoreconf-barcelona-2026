@@ -41,6 +41,8 @@ npm install
 npm run dev
 ```
 
+El backend incorpora además un workflow local real de Microsoft Agent Framework (fan-out a cuatro ejecutores Guardianes **deterministas**, sin LLM ni nube): `POST /api/runs/maf-simulate`. Una ejecución con este endpoint sigue siendo `SIMULATED`, nunca `LIVE`.
+
 Una vez construido el proyecto, las rutas públicas de ejemplo serán `GET /api/scenarios`, `POST /api/runs/simulate`, `GET /api/runs/{id}`, `GET /api/runs/{id}/events` y `GET /api/runs/{id}/stream`. El backend no habilitará escrituras Azure por defecto.
 
 ## Organización

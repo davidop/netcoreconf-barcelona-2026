@@ -19,7 +19,7 @@ API smoke:
 ~~~bash
 curl http://localhost:5080/health
 curl http://localhost:5080/api/scenarios
-curl -X POST http://localhost:5080/api/runs/simulate -H "Content-Type: application/json" -d '{"scenario":"policy-block"}'
+curl -X POST http://localhost:5080/api/runs/maf-simulate -H "Content-Type: application/json" -d '{"scenario":"policy-block"}'
 ~~~
 
 ## Presenter narrative
