@@ -1,0 +1,4 @@
+# EXAMPLE ONLY: not authorized to deploy.
+subscription_id = "00000000-0000-0000-0000-000000000000"
+deploy_enabled = false
+location = "swedencentral"
