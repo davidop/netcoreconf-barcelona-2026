@@ -72,15 +72,19 @@ The primary incident workflow now runs **real local MAF orchestration** with fou
 
 **Future LIVE:** Entra authorization, verified human approval, Foundry/Copilot Studio/Teams connectors and Azure deployments. These are **not connected**. Explore [six architecture diagrams](docs/diagrams/README.md) and [security boundaries](docs/security.md).
 
-## 🧑‍🚀 Three demo missions
+## 🧑‍🚀 Three MerlinOps missions — same synthetic incident
 
-| Mission | Purpose | Synthetic local outcome | Intended conference path |
-|---|---|---|---|
-| **01 · El ahorro** | Model routing, cost, latency and quality | PASS → **fictional** approval → synthetic projected 24% reduction | LIVE only after integration/authorization |
-| **02 · El escudo** | Block a critical-risk proposal | **DENY** without downstream approval or deployment | LIVE only after integration/authorization |
-| **03 · La reversión** | Quality regression and recovery | **Fictional** canary, regression and rollback | REPLAY |
+**Conference protagonist:** MerlinOps improves **its own** incident-resolution workflow. The first local slice executes real MAF Guardian orchestration; cloud model reasoning and Copilot Studio delegation are **not yet wired**.
 
-The 24%, 0.42 USD, 0.94 quality score and 1850 ms p95 are **illustrative synthetic fixtures**, not observed costs or telemetry.
+| Mission | Question from Érika | What the current local engine proves |
+|---|---|---|
+| **01 · Aprende** | Did v2 really improve the workflow without losing quality? | v1 makes 9 counted local tool calls; v2 makes 4 against the same incident fixture; measured local elapsed time and full evidence trace |
+| **02 · El escudo** | What if the proposed retry budget exceeds policy? | Deterministic backend **DENY** before any human-approval or deployment events |
+| **03 · La reversión** | Can we prove recovery after a late regression? | Synthetic quality regression; actual on-disk **local** workflow manifest restored to v1, SHA-256 verified |
+
+**Source provenance:** fixture values are synthetic, and local duration is observed in .NET using a Stopwatch. Counts are local tool operations, **not Azure API calls**. Foundry tokens/cost are `null` until actual inference is verified. Technical PASS does not mean human approval.
+
+[10 final scope decisions](docs/ten-decisions-implementation.md) · [Érika-first code and tests](docs/erika-first-slice.md)
 
 ## ⚡ Quickstart — no Azure subscription needed
 
@@ -101,12 +105,12 @@ npm install
 npm run dev
 ~~~
 
-Open **Mission Control (slide 6)**. Replay works without any backend; on localhost you can activate **SIMULATED SSE** to execute the real MAF workflow with deterministic local executors.
+Open **Mission Control (slide 6)** for synthetic Replay. Open **Érika's incident self-improvement scene (slide 7)** for the real local MAF v1/v2 comparison. The local API is required for executable tests; public Pages is read-only Replay.
 
 ~~~bash
-curl -X POST http://localhost:5080/api/runs/maf-simulate \
+curl -X POST http://localhost:5080/api/incident/compare \
   -H 'Content-Type: application/json' \
-  -d '{"scenario":"policy-block"}'
+  -d '{"caseId":"incident-improvement"}'
 
 dotnet test tests/MerlinOps.Tests/MerlinOps.Tests.csproj
 ~~~
