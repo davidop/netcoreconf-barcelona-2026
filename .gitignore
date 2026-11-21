@@ -17,3 +17,6 @@
 *.tfvars
 !*.tfvars.example
 replay-review/
+
+# Private read-only Azure evidence exports must never be committed.
+artifacts/private/
