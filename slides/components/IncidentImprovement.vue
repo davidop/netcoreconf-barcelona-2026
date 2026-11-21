@@ -108,7 +108,7 @@ async function execute() {
       <div class="audit" aria-label="Trazabilidad y eventos del workflow">
         <span v-for="e in comparison.audit" :key="e.sequence">{{e.sequence}} · {{e.kind}}</span>
       </div>
-      <div class="footnote">Tiempo observado en proceso local con herramientas sintéticas · tokens Foundry no disponibles · no hay cambios cloud</div>
+      <div class="footnote">Trace: {{comparison.id.slice(0,12)}}… · tiempo local medido sobre herramientas sintéticas · tokens Foundry no disponibles · sin cambios cloud</div>
     </div>
 
     <div v-else class="intro">
