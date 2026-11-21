@@ -205,3 +205,9 @@ The user requested **no more questionnaires: start building the demo now**, with
 - **P2:** rich polls, multimedia, advanced memory, community extensions, cloud deployment and other presentation enhancements.
 
 The first runnable slice is documented at [Érika-first demo](erika-first-slice.md).
+
+## Final scope agreement — ten user answers (supersedes architecture questionnaires)
+
+The owner confirmed ten definitive scope selections on **2026-11-21**, recorded with implementation evidence and outstanding integration gates in [Ten final decisions](ten-decisions-implementation.md). Answers: **1A, 2C, 3A, 4A, 5C, 6C, 7A, 8C, 9C, 10C**.
+
+Primary mission is **MerlinOps optimizing its own incident-resolution workflow**, NOT creating Azure Container Apps. **Copilot Studio in an existing dev environment** → **.NET 10 MAF** → **Foundry project ai-omniroute-dev** (verified main+fallback models) → real evaluation/telemetry → **Slidev Live Orchestration** is the requested conference circuit. Érika remains an active adversarial governance/evaluation actor. GitHub code changes are authorized; any Copilot Studio or Foundry configuration requires review beforehand. Never treat cloud connectors as implemented merely because the architecture names them.
