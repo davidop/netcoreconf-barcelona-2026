@@ -2,11 +2,17 @@
 
 [← Back to README](../README.md) · [Roadmap](roadmap.md) · [CI](https://github.com/davidop/netcoreconf-barcelona-2026/actions/workflows/ci.yml)
 
+## Ten final decisions — scope baseline
+
+[Read the ten accepted responses and implementation gates](ten-decisions-implementation.md). The protagonist is MerlinOps optimizing **its own incident-resolution workflow**, not an Azure resource. The full Copilot Studio → MAF → Foundry → evals → Slidev path is the live **target**, not yet a completed integration.
+
+New `IncidentImprovementEngine` executes real MAF local Guardian graph and counted local tool calls on one versioned synthetic incident; records actual local elapsed time separately from synthetic source metrics. New slide #7 shows improvement, backend DENY and local rollback with guarded provenance. `/api/integrations/preflight` reports Foundry/Copilot NOT_CONNECTED without credentials or network calls.
+
 ## Core priority correction: Copilot Studio + MAF + Foundry
 
 [The original three-product architecture](demo-core-architecture.md) is now the implementation priority. No Container App exists or needs creating. Synthetic Container Apps data is a reproducible case study; the read-only Azure script is optional. Real Copilot Studio and Foundry inference are not yet connected and must not be described as working.
 
-## New Érika-first vertical slice (feature branch, awaiting CI)
+## New Érika-first vertical slice (draft PR; verify latest CI)
 
 - [Technical walkthrough, source and demo acceptance](erika-first-slice.md).
 - [Opt-in Azure Container Apps read-only evidence probe](azure-readonly-evidence.md): new local PowerShell tool for authorized Azure CLI configuration and basic metric reads; output private and quality remains INCOMPLETE until p95/cost attribution is independently verified. **Not yet tested against a real Azure resource.**
