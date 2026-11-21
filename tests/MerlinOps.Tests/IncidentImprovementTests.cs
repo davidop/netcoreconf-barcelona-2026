@@ -81,6 +81,7 @@ public sealed class IncidentImprovementTests
                 var report = await Create().CompareAsync(testCase, dir);
                 Assert.Equal(Enumerable.Range(1, report.Audit.Count), report.Audit.Select(x => x.Sequence));
                 Assert.All(report.Audit, e => Assert.Equal("SIMULATED", e.Provenance));
+                Assert.All(report.Audit, e => Assert.Equal(report.Id, e.TraceId));
                 Assert.All(report.Audit, e => Assert.False(string.IsNullOrWhiteSpace(e.Message)));
                 Assert.Equal(report.V1.QualityScore, report.V2.QualityScore);
             }
