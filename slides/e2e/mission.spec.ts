@@ -17,15 +17,17 @@ test('Mission Control retains truthful synthetic provenance', async ({ page }) =
 })
 
 
-test('Erika comparison explains synthetic evidence and backend-only gates', async ({ page }) => {
+test('Erika incident improvement stage states actual and pending integrations', async ({ page }) => {
   await page.goto('/7')
-  const panel = page.getByRole('region', { name: 'Comparación supervisada v1 y v2 de MerlinOps' })
+  const panel = page.getByRole('region', { name: 'MerlinOps: mejora supervisada de un workflow de incidencias' })
   await expect(panel).toBeVisible()
-  await expect(panel.getByText('SIMULATED · FIXTURES')).toBeVisible()
-  await expect(panel.getByText('El aprendiz detecta trabajo repetido.')).toBeVisible()
+  await expect(panel.getByText('LOCAL · SIMULATED')).toBeVisible()
+  await expect(panel.getByText('REAL · LOCAL')).toBeVisible()
+  await expect(panel.getByText('NO CONECTADO')).toBeVisible()
+  await expect(panel.getByText('¿Puede MerlinOps mejorar su propia forma de resolver incidencias?')).toBeVisible()
   await expect(panel.getByText('v1').first()).toBeVisible()
   await expect(panel.getByText('v2').first()).toBeVisible()
-  await panel.getByLabel('CASO').selectOption('policy-block')
-  await expect(panel.getByRole('button', { name: 'Ejecutar comparación local' })).toBeVisible()
-  await page.screenshot({ path: 'test-results/erika-v1-v2.png', fullPage: true })
+  await panel.getByLabel('MISIÓN').selectOption('incident-policy-block')
+  await expect(panel.getByRole('button', { name: '▶ Ejecutar v1 vs v2' })).toBeVisible()
+  await page.screenshot({ path: 'test-results/erika-incident-v1-v2.png', fullPage: true })
 })
