@@ -109,13 +109,13 @@ layout: default
 layout: default
 ---
 
-# Érika: ¿ha mejorado realmente el agente?
+# Érika: ¿de verdad ha aprendido MerlinOps?
 
-<div class="demo-context">Un caso concreto de Azure Container Apps: las mismas evidencias sintéticas, v1 repetitiva y v2 con un workflow explícito. Comparación y decisiones deterministas en el backend local.</div>
+<div class="demo-context">MerlinOps mejora su PROPIO workflow de resolución de incidencias. Cuatro Guardianes en MAF, evidencias iguales para v1/v2, telemetría de la ejecución local y políticas fuera del LLM.</div>
 
-<ErikaComparison />
+<IncidentImprovement />
 
-<!-- PRIMER CORTE: ejecución local simulada. Érika destaca calidad, evidencias y PASS técnico sin aprobación; David muestra las consultas evitadas. Los otros dos casos muestran DENY y restauración local verificable. NO es telemetría de Azure real ni self-learning nativo. -->
+<!-- ÉRIKA: cuestionar calidad y autorización. DAVID: 9 vs 4 llamadas locales y tiempos realmente medidos en código sobre adaptadores sintéticos. MAF real; Foundry/Copilot Studio aún NO CONECTADOS. Los tres casos: mejora supervisada, DENY y rollback de manifiesto local verificado. -->
 
 ---
 layout: default
