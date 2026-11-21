@@ -2,6 +2,15 @@
 
 [← Back to README](../README.md) · [Roadmap](roadmap.md) · [CI](https://github.com/davidop/netcoreconf-barcelona-2026/actions/workflows/ci.yml)
 
+## New Érika-first vertical slice (feature branch, awaiting CI)
+
+- [Technical walkthrough, source and demo acceptance](erika-first-slice.md).
+- Local synthetic Container Apps comparison: v1 actually calls nine local tool adapters; v2 calls four against identical immutable evidence.
+- Deterministic backend gates reject unsafe proposals and missing required latency data, with no approval or cloud-write capability.
+- A local manifest file is switched from v2 back to v1 and its SHA-256 verified for the rollback case. This is a **local demo sandbox**, not an Azure rollback.
+- Slidev now includes an evidence-first comparison panel; it calls the backend only from localhost and labels all evidence SYNTHETIC/SIMULATED.
+- Additional regression tests cover the core scenarios. Build and CI are still required before describing this branch as validated.
+
 ## Implemented and CI-validated
 
 - .NET 10 API, three locally simulated scenarios, YAML fail-closed policy and SQLite synthetic run snapshots.
