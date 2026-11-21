@@ -42,6 +42,8 @@ app.MapGet("/api/config", () => Results.Ok(new
     dataProvenance = "SYNTHETIC", requiresExternalApproval = true
 }));
 app.MapGet("/api/scenarios", () => Results.Ok(SimulationEngine.Scenarios));
+// Safe readiness is metadata only: even a valid URL does NOT mean model/auth connectivity.
+app.MapGet("/api/integrations/preflight", () => Results.Ok(MerlinOpsIntegrationPreflight.InspectEnvironment()));
 
 // Erika's first slice: backend-enforced, entirely local comparisons over synthetic evidence.
 // No authorized real Azure access, publication or Teams approval is implied.
