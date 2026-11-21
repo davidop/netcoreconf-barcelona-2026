@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="884" viewBox="0 0 1600 884" role="img" aria-label="Architecture diagram: public Slidev Replay, local .NET MAF simulation, future governed LIVE integrations">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07162f"/><stop offset="1" stop-color="#121b3d"/></linearGradient>
+<linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#173b63"/><stop offset="1" stop-color="#0e2645"/></linearGradient>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6Z" fill="#7dc8f0"/></marker>
+<marker id="farrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6Z" fill="#8287b0"/></marker>
+</defs>
+<rect width="1600" height="884" rx="24" fill="url(#bg)"/>
+<text x="55" y="72" font-family="Segoe UI,Arial" fill="#f5faff" font-size="44" font-weight="800">Architecture at a glance</text>
+<text x="55" y="114" font-family="Segoe UI,Arial" fill="#a4c9e6" font-size="24">Honest boundaries: the public site has REPLAY, local development has SIMULATED MAF, LIVE is not wired.</text>
+<g>
+<rect x="42" y="160" width="454" height="585" rx="22" fill="#102943" stroke="#4b9ac6" stroke-width="2"/>
+<rect x="520" y="160" width="602" height="585" rx="22" fill="#102d4c" stroke="#58aed1" stroke-width="2"/>
+<rect x="1146" y="160" width="412" height="585" rx="22" fill="#211f3b" stroke="#85759f" stroke-width="2" stroke-dasharray="10 9"/>
+<text x="66" y="204" fill="#8beef5" font-size="23" font-family="Segoe UI,Arial" font-weight="800">01  PUBLIC SHOWCASE</text>
+<text x="542" y="204" fill="#8beef5" font-size="23" font-family="Segoe UI,Arial" font-weight="800">02  LOCAL ENGINEERING</text>
+<text x="1170" y="204" fill="#d1bff0" font-size="23" font-family="Segoe UI,Arial" font-weight="800">03  FUTURE LIVE</text>
+</g>
+<rect x="74" y="245" width="392" height="112" rx="15" fill="url(#panel)" stroke="#6dc9de"/>
+<text x="99" y="286" fill="#f2fbff" font-size="29" font-family="Segoe UI,Arial" font-weight="750">Slidev · GitHub Pages</text><text x="99" y="320" fill="#b6d4e7" font-size="19" font-family="Segoe UI,Arial">Mission Control UI · view only</text>
+<path d="M270 357 V406" fill="none" stroke="#7dc8f0" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="74" y="411" width="392" height="112" rx="15" fill="#143756" stroke="#67bbd3"/>
+<text x="99" y="452" fill="#f2fbff" font-size="29" font-family="Segoe UI,Arial" font-weight="750">Static Replay fixtures</text><text x="99" y="488" fill="#b6d4e7" font-size="19" font-family="Segoe UI,Arial">JSON · synthetic provenance</text>
+<rect x="93" y="569" width="354" height="93" rx="14" fill="#164039" stroke="#3baf9b"/>
+<text x="115" y="607" fill="#a9ffdf" font-family="Segoe UI,Arial" font-size="24" font-weight="800">NO CLOUD ACCESS</text><text x="115" y="636" fill="#b8e8d9" font-family="Segoe UI,Arial" font-size="18">Static, public and reproducible</text>
+<rect x="556" y="244" width="532" height="105" rx="15" fill="url(#panel)" stroke="#66c3ee"/>
+<text x="584" y="286" fill="#f2fbff" font-size="28" font-family="Segoe UI,Arial" font-weight="750">ASP.NET Core · .NET 10</text><text x="584" y="319" fill="#b6d4e7" font-size="19" font-family="Segoe UI,Arial">Local REST / SSE · SIMULATED</text>
+<path d="M822 349 V396" stroke="#7dc8f0" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="556" y="400" width="532" height="107" rx="15" fill="#1a4161" stroke="#79cbe4"/>
+<text x="584" y="442" fill="#f2fbff" font-size="28" font-family="Segoe UI,Arial" font-weight="750">Microsoft Agent Framework</text><text x="584" y="476" fill="#b6d4e7" font-size="19" font-family="Segoe UI,Arial">Real fan-out · deterministic executors</text>
+<g font-family="Segoe UI,Arial" font-size="17" font-weight="700" text-anchor="middle">
+<rect x="556" y="548" width="122" height="67" rx="10" fill="#154a66" stroke="#75d2e9"/><text x="617" y="576" fill="#d5f3fa">Telemetry</text><text x="617" y="599" fill="#83d5eb">p95</text>
+<rect x="692" y="548" width="122" height="67" rx="10" fill="#154a66" stroke="#75d2e9"/><text x="753" y="576" fill="#d5f3fa">FinOps</text><text x="753" y="599" fill="#83d5eb">Costs</text>
+<rect x="828" y="548" width="122" height="67" rx="10" fill="#154a66" stroke="#75d2e9"/><text x="889" y="576" fill="#d5f3fa">Quality</text><text x="889" y="599" fill="#83d5eb">Evals</text>
+<rect x="964" y="548" width="124" height="67" rx="10" fill="#154a66" stroke="#75d2e9"/><text x="1026" y="576" fill="#d5f3fa">Governance</text><text x="1026" y="599" fill="#83d5eb">Policies</text>
+</g>
+<path d="M822 507 V542" stroke="#7dc8f0" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="556" y="646" width="256" height="67" rx="12" fill="#193b5d" stroke="#9bbff0"/><text x="684" y="687" text-anchor="middle" fill="#e9f5ff" font-size="23" font-family="Segoe UI,Arial">YAML Policy Gates</text>
+<rect x="830" y="646" width="258" height="67" rx="12" fill="#193b5d" stroke="#9bbff0"/><text x="959" y="687" text-anchor="middle" fill="#e9f5ff" font-size="23" font-family="Segoe UI,Arial">SQLite / Event Replay</text>
+<g font-family="Segoe UI,Arial" fill="#c6bbd6">
+<rect x="1175" y="244" width="350" height="87" rx="13" fill="#30294b" stroke="#8773a6" stroke-dasharray="8 6"/><text x="1202" y="281" font-size="25" font-weight="700">Entra ID · RBAC</text><text x="1202" y="309" font-size="18">NOT IMPLEMENTED</text>
+<rect x="1175" y="355" width="350" height="87" rx="13" fill="#30294b" stroke="#8773a6" stroke-dasharray="8 6"/><text x="1202" y="392" font-size="25" font-weight="700">Copilot Studio / Teams</text><text x="1202" y="420" font-size="18">NOT CONNECTED</text>
+<rect x="1175" y="466" width="350" height="87" rx="13" fill="#30294b" stroke="#8773a6" stroke-dasharray="8 6"/><text x="1202" y="503" font-size="25" font-weight="700">Microsoft Foundry</text><text x="1202" y="531" font-size="18">NOT CONNECTED</text>
+<rect x="1175" y="577" width="350" height="87" rx="13" fill="#30294b" stroke="#8773a6" stroke-dasharray="8 6"/><text x="1202" y="614" font-size="25" font-weight="700">Azure deploy / rollback</text><text x="1202" y="642" font-size="18">NOT AUTHORIZED</text>
+</g>
+<path d="M1102 473 C1145 473 1118 412 1160 412" stroke="#8884a7" stroke-width="3" fill="none" stroke-dasharray="8 9" marker-end="url(#farrow)"/>
+<rect x="42" y="774" width="1516" height="76" rx="14" fill="#0f2b4b" stroke="#39688b"/>
+<text x="75" y="808" font-family="Segoe UI,Arial" font-size="23" fill="#f7fbff" font-weight="750">Safety invariant:</text>
+<text x="265" y="808" font-family="Segoe UI,Arial" font-size="23" fill="#9de1ec">an agent recommendation never grants permission to modify infrastructure.</text>
+<text x="75" y="835" font-family="Segoe UI,Arial" font-size="17" fill="#a5bcd8">Future LIVE requires an explicitly authorized deployment, identity enforcement, backend gates and verified human approval.</text>
+</svg>

@@ -1,0 +1,12 @@
+flowchart TD
+  Public["Anonymous GitHub Pages visitor"] --> Replay["Public synthetic Replay fixtures"]
+  Presenter["Presenters: Érika / David"] --> Local["Local demo runtime"]
+  Local --> Enforcer["Mandatory backend policy engine"]
+  Enforcer --> Deny["DENY on critical risk"]
+  Enforcer --> Sim["SIMULATED approval marker"]
+  Sim --> NoWrite["No Azure mutation path"]
+  Protected["Future LIVE (not implemented)"] -.-> ID["Entra token validation + RBAC"]
+  ID -.-> Approval["Verified human approval / Teams"]
+  Approval -.-> Authorized["Separately authorized Azure environment"]
+  classDef future fill:#302646,color:#ddd,stroke:#b0a1dc,stroke-dasharray:5 5;
+  class Protected,ID,Approval,Authorized future;

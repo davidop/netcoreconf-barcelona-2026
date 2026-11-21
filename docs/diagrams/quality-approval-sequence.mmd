@@ -1,0 +1,34 @@
+sequenceDiagram
+  autonumber
+  participant Presenter as Presenters
+  participant UI as Slidev Mission Control
+  participant API as .NET API (local)
+  participant MAF as MerlinOps (MAF)
+  participant Guards as Four deterministic Guardians
+  participant Policy as YAML policy gate
+  participant DB as SQLite
+  Presenter->>UI: Select scenario
+  UI->>API: POST /api/runs/maf-simulate
+  API->>MAF: Start local simulation
+  par Four fan-out branches
+    MAF->>Guards: Telemetry
+  and
+    MAF->>Guards: FinOps
+  and
+    MAF->>Guards: Quality
+  and
+    MAF->>Guards: Governance
+  end
+  Guards-->>MAF: Synthetic results
+  MAF-->>API: Completed events
+  API->>Policy: Evaluate deterministic rules
+  alt Policy DENY
+    Policy-->>API: Block
+    API->>DB: Store blocked run
+  else Policy PASS
+    Policy-->>API: Requires human approval
+    Note over API,DB: Current approval is simulated; not Teams authorization
+    API->>DB: Store synthetic scenario
+  end
+  API-->>UI: Run ID / SSE event stream
+  UI-->>Presenter: Provenance = SIMULATED

@@ -1,0 +1,14 @@
+C4Context
+  title MerlinOps — system context (target and current truth)
+  Person(presenters, "Érika and David", "Conference presenters")
+  Person(audience, "Audience", "Anonymous viewer of published Replay")
+  System(slidev, "Slidev Mission Control", "Public static visual presentation")
+  System_Boundary(local,"Local demonstration") {
+    System(api, ".NET 10 API", "Deterministic simulation, MAF fan-out and YAML gates")
+    SystemDb(sqlite, "SQLite", "Local run snapshots")
+  }
+  System_Ext(future, "Foundry / Copilot Studio / Azure", "FUTURE · not connected")
+  Rel(audience, slidev, "Views public Replay")
+  Rel(presenters, api, "Controls local simulation")
+  Rel(api, sqlite, "Stores run snapshots")
+  Rel(api, future, "No integration active", "future")

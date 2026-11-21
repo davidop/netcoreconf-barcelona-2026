@@ -1,0 +1,13 @@
+flowchart LR
+  M["MerlinOps"] --> S1["1. FinOps suggestion"]
+  M --> S2["2. Unsafe request"]
+  M --> S3["3. Quality regression"]
+  S1 --> G1{"Quality and cost gates"}
+  G1 -->|pass| A["Synthetic approval and deployment"]
+  S2 --> G2{"Critical risk?"}
+  G2 -->|yes| D["DENY, stop"]
+  S3 --> Canary["Synthetic canary rollout"]
+  Canary --> Q{"Quality drops?"}
+  Q -->|yes| R["Synthetic rollback"]
+  classDef denied fill:#542a42,color:#fff,stroke:#f190a6;
+  class D denied;

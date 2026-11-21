@@ -1,0 +1,32 @@
+flowchart LR
+  subgraph PUBLIC["Public presentation"]
+    Pages["Slidev / GitHub Pages"]
+    Replay["Synthetic Replay JSON"]
+    Pages --> Replay
+  end
+  subgraph LOCAL["Developer machine · SIMULATED"]
+    UI["Local Slidev"]
+    API["ASP.NET Core .NET 10 API"]
+    MAF["MAF Workflow / MerlinOps"]
+    T["Telemetry Guardian"]
+    F["FinOps Guardian"]
+    Q["Quality Guardian"]
+    G["Governance Guardian"]
+    Policy{"YAML Quality / Security Gates"}
+    DB[(SQLite)]
+    UI -->|REST / SSE| API
+    API --> MAF
+    MAF --> T & F & Q & G
+    API --> Policy
+    API --> DB
+  end
+  subgraph FUTURE["Future LIVE · not connected / not authorized"]
+    Entra["Entra ID / RBAC"]
+    CS["Copilot Studio / Teams"]
+    Foundry["Microsoft Foundry"]
+    Azure["Azure deployment / rollback"]
+  end
+  API -. Future protected adapters .-> Entra
+  Entra -.-> CS & Foundry & Azure
+  classDef future fill:#332746,color:#c8b9e0,stroke:#8c78a9,stroke-dasharray:5 5;
+  class Entra,CS,Foundry,Azure future;

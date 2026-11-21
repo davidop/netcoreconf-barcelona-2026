@@ -1,0 +1,11 @@
+flowchart TB
+  Presenter["Érika and David"] --> Mode{"Select execution mode"}
+  Mode --> Replay["REPLAY: published synthetic fixture"]
+  Mode --> Sim["SIMULATED: local MAF graph / REST / SSE"]
+  Mode -. "not available today" .-> Live["LIVE: explicit authorization + Entra + RBAC"]
+  Replay --> Visual["Slidev Mission Control"]
+  Sim --> Visual
+  Live -. "requires separate implementation and testing" .-> Visual
+  Visual --> Badge["Always show the real provenance on screen"]
+  classDef future fill:#302646,stroke:#aa90c8,stroke-dasharray:5 5,color:#ddd;
+  class Live future;
