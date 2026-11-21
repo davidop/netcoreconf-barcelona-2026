@@ -20,6 +20,9 @@ jobs:
           python-version: '3.12'
       - name: Validate Markdown references and SVG assets (offline)
         run: python tools/check_docs.py
+      - name: Validate read-only Azure probe syntax and resource scope (offline)
+        shell: pwsh
+        run: ./tools/azure-containerapps-readonly.ps1 -ResourceId '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/demo/providers/Microsoft.App/containerApps/example' -ValidateOnly
 
   dotnet:
     runs-on: ubuntu-latest
