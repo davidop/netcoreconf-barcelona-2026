@@ -7,7 +7,8 @@ A collection of **original, editable SVG illustrations** for the GitHub reposito
 | Visual | Asset | Use |
 |---|---|---|
 | Main hero | [merlinops-hero.svg](../assets/banners/merlinops-hero.svg) | GitHub README header and talk landing |
-| Social card | [social-preview.svg](../assets/banners/social-preview.svg) | 1280 × 640 social-preview source; rasterize to PNG/JPG for GitHub settings if required |
+| Social preview PNG | [social-preview.png](../assets/banners/social-preview.png) | **Upload-ready 1280 × 640 image**, generated automatically from the original SVG |
+| Editable social card SVG | [social-preview.svg](../assets/banners/social-preview.svg) | Vector source for future revisions |
 | MerlinOps mascot | [merlinops.svg](../assets/mascot/merlinops.svg) | Avatar, README icon, presenter guide |
 | Three stories | [three-scenarios.svg](../assets/scenarios/three-scenarios.svg) | Narrative triptych |
 | Architecture poster | [architecture-overview.svg](../assets/diagrams/architecture-overview.svg) | System boundaries, implemented vs future |
@@ -28,4 +29,4 @@ A collection of **original, editable SVG illustrations** for the GitHub reposito
 - The wizard is a stylized conference character, **not a Microsoft Copilot or Foundry official mascot**.
 - The actual screenshots are test artifacts in [browser E2E Actions](https://github.com/davidop/netcoreconf-barcelona-2026/actions/workflows/e2e.yml).
 - Icons copied from third-party projects retain all relevant trademark rights: see [attribution](../assets/brand/README.md).
-- For the GitHub social-preview setting, export the SVG to a raster format at its native 1280 × 640 dimensions; the connector cannot update repository metadata automatically here.
+- For the GitHub repository-wide Social preview setting, **upload the ready-made [social-preview.png](../assets/banners/social-preview.png)**. The connector can publish files but cannot change that GitHub Settings field. See [one-time repository settings checklist](repository-setup.md).

@@ -2,7 +2,7 @@
 
 [← README](../README.md) · [Media kit](media-kit.md) · [Repository Settings](https://github.com/davidop/netcoreconf-barcelona-2026/settings)
 
-The repository source is already upgraded with the hero, diagrams, badges, CI and contributor templates. The **About panel and social preview are GitHub repository settings**, not README files, so they still require an authenticated owner to configure manually.
+The repository source already includes the hero, diagrams, badges, CI, contributor templates and **an upload-ready PNG social preview**. The **About panel and Social preview selection** are repository settings, not README files, and the connected GitHub tools cannot change them. As checked on 2026-11-21, the repository's description and website are empty and its topics list is empty.
 
 ## Recommended About panel
 
@@ -18,11 +18,11 @@ The repository source is already upgraded with the hero, diagrams, badges, CI an
 
 1. Open [Settings → General](https://github.com/davidop/netcoreconf-barcelona-2026/settings).
 2. Scroll to **Social preview**.
-3. Export [original social-preview.svg](../assets/banners/social-preview.svg) at **1280 × 640** into a raster PNG/JPG, retaining aspect ratio.
-4. Upload that raster. GitHub may not accept SVG directly as the social-preview image.
+3. Download the **already rendered, upload-ready [social-preview.png](../assets/banners/social-preview.png)** (1280 × 640). Its [original editable SVG](../assets/banners/social-preview.svg) is also included.
+4. In **Social preview**, click **Edit → Upload an image**, select that PNG and save.
 5. Inspect the share preview and make sure the subtitle remains legible on mobile.
 
-The SVG is original MerlinOps artwork; third-party marks are not included in the social preview.
+The PNG is generated from original MerlinOps SVG artwork through [GitHub Actions](../.github/workflows/social-preview.yml), using [a deterministic conversion script](../tools/render_social_preview.py). Third-party marks are not included in the social preview. Uploading the image as the repository-wide Social preview remains a **manual GitHub Settings control**; the file existing in the repository does not apply it.
 
 ## Collaboration and quality gates
 
