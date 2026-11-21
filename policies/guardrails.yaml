@@ -5,5 +5,7 @@ min_quality_score: 0.85
 max_latency_ms: 3000
 # Demo safety floor for the proposed Container Apps autoscaling setting.
 min_allowed_replicas: 1
+# Maximum retry attempts allowed in a MerlinOps incident resolution workflow.
+max_incident_retries: 3
 human_approval_required: true
 allow_cloud_writes: false
