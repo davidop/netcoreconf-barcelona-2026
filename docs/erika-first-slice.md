@@ -47,10 +47,10 @@ The public GitHub Pages site never exposes a protected presenter control or priv
 
 ## What must happen next (Érika's acceptance order)
 
-1. Replace fixture adapters with validated **read-only** Azure Container Apps diagnostics for one authorized app and maintain the fixtures for repeatability.
-2. Instrument the v1 and v2 tool workflows with OpenTelemetry and append-only live event emission; collect actual duration, cost availability and trace correlation.
-3. Expand deterministic and model evaluation separately; enforce complete evidence and policy checks, and negative authorization tests.
-4. Add authenticated presenter control for Érika/David; keep public/projection state read-only. Human review through GitHub and Teams must be independently authenticated and validated.
-5. Rehearse the connected savings / policy DENY / verified local rollback narrative and the offline fallback.
+1. **Restore the three-product story:** Copilot Studio as entry surface, Microsoft Agent Framework as the .NET multiagent workflow and Microsoft Foundry for real model inference/interpretation. See [core architecture](demo-core-architecture.md).
+2. Instrument MAF v1/v2 execution with OpenTelemetry and genuine incremental event emission. Run against **the existing synthetic fixtures**, with measured local durations and independently verified Foundry token/latency data where available.
+3. Validate Foundry model integration using an existing authorized project and then establish an authenticated Copilot Studio → MAF connection via an environment-supported route (A2A or REST).
+4. Add private presenter control for Érika/David, projected read-only Slidev, tests and deterministic backend gates. Keep human approval separate from technical PASS.
+5. Rehearse connected improvement / policy DENY / verified **local** rollback with offline Replay. **Do not create a Container App for this.** A real read-only Container Apps adapter is optional and not a blocker.
 
 **No Azure resources are created or modified by this feature.** No consent to enable Azure writes, deployment or cloud rollback has been granted.
