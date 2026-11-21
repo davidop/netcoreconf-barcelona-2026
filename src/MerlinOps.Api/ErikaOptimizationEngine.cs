@@ -108,7 +108,7 @@ public sealed class ErikaOptimizationEngine(PolicyEngine policy)
 
     private static ErikaVersionResult Execute(string version, AppEvidence source)
     {
-        var tools = new LocalEvidenceTools(source);
+        var tools = new LocalEvidenceTools();
         if (version == "v1")
         {
             // Deliberately redundant checks in baseline agent-driven flow.
@@ -139,7 +139,7 @@ public sealed class ErikaOptimizationEngine(PolicyEngine policy)
     private sealed record AppEvidence(string Resource, int MinReplicas, int MaxReplicas,
         int HttpConcurrency, int Requests24h, int? P95LatencyMs, decimal DailyEstimatedCostUsd, bool CriticalRisk);
 
-    private sealed class LocalEvidenceTools(AppEvidence evidence)
+    private sealed class LocalEvidenceTools
     {
         public List<string> Calls { get; } = [];
         public void Configuration() => Calls.Add("GET configuration");
