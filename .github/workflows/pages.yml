@@ -1,6 +1,11 @@
 name: Publish static Slidev to GitHub Pages (manual)
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'slides/**'
+      - '.github/workflows/pages.yml'
 
 permissions:
   contents: read
@@ -25,6 +30,7 @@ jobs:
         working-directory: slides
       - run: npm run build:pages
         working-directory: slides
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: slides/dist
