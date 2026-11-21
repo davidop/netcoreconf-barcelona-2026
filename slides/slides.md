@@ -109,6 +109,18 @@ layout: default
 layout: default
 ---
 
+# Érika: ¿ha mejorado realmente el agente?
+
+<div class="demo-context">Un caso concreto de Azure Container Apps: las mismas evidencias sintéticas, v1 repetitiva y v2 con un workflow explícito. Comparación y decisiones deterministas en el backend local.</div>
+
+<ErikaComparison />
+
+<!-- PRIMER CORTE: ejecución local simulada. Érika destaca calidad, evidencias y PASS técnico sin aprobación; David muestra las consultas evitadas. Los otros dos casos muestran DENY y restauración local verificable. NO es telemetría de Azure real ni self-learning nativo. -->
+
+---
+layout: default
+---
+
 # El escudo de la gobernanza
 
 <div class="split-flow">
