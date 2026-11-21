@@ -31,6 +31,7 @@ public sealed class Guardrails
     public double MinQualityScore { get; set; } = 0.85;
     public int MaxLatencyMs { get; set; } = 3000;
     public int MinAllowedReplicas { get; set; } = 1;
+    public int MaxIncidentRetries { get; set; } = 3;
     public bool HumanApprovalRequired { get; set; } = true;
     public bool AllowCloudWrites { get; set; } = false;
 }
