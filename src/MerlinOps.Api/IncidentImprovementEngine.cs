@@ -30,9 +30,10 @@ public sealed class IncidentImprovementEngine(PolicyEngine policy)
 
         var snapshot = JsonSerializer.Serialize(fixture);
         var hash = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(snapshot))).ToLowerInvariant();
+        var traceId = Guid.NewGuid().ToString("N");
         var audit = new List<IncidentAuditEvent>();
         void Emit(string kind, string message, string gate = "NONE") =>
-            audit.Add(new(audit.Count + 1, DateTimeOffset.UtcNow, kind, message, gate, "SIMULATED"));
+            audit.Add(new(audit.Count + 1, DateTimeOffset.UtcNow, kind, message, gate, "SIMULATED", traceId));
 
         Emit("incident.received", "Local synthetic incident fixture received; cloud access and writes disabled.");
         var v1 = await RunVersionAsync("v1", fixture, cancellationToken);
@@ -82,7 +83,7 @@ public sealed class IncidentImprovementEngine(PolicyEngine policy)
                 "Technical PASS only: Érika must review evidence. Human approval is NOT_REQUESTED; nothing is deployed.", "PENDING");
 
         return new IncidentImprovementReport(
-            Guid.NewGuid().ToString("N"), caseId, "SIMULATED", "SYNTHETIC_FIXTURE",
+            traceId, caseId, "SIMULATED", "SYNTHETIC_FIXTURE",
             "Copilot Studio → MAF → Foundry → Quality Gates → Slidev (TARGET ONLY: cloud integrations not connected)",
             fixture.IncidentId, fixture.Service, hash,
             "Resolve INC-2042 with fewer duplicate diagnostic tool calls while preserving quality, policy and auditability.",
@@ -194,7 +195,7 @@ public sealed record IncidentWorkflowVersion(string Version, int ToolCalls, doub
 public sealed record ModelInferenceEvidence(string Provider, string PlannedProject, string Status, string? Model,
     int? InputTokens, int? OutputTokens, decimal? CostUsd, string UsageProvenance);
 public sealed record IncidentAuditEvent(int Sequence, DateTimeOffset OccurredAt, string Kind,
-    string Message, string Gate, string Provenance);
+    string Message, string Gate, string Provenance, string TraceId);
 public sealed record IncidentImprovementReport(
     string Id, string CaseId, string Mode, string EvidenceSource, string IntendedArchitecture,
     string IncidentId, string Service, string EvidenceSha256, string UserRequest,
