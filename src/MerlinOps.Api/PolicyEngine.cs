@@ -26,10 +26,22 @@ public sealed class PolicyEngine
             ?? throw new InvalidOperationException("Guardrails policy empty.");
         if (Rules.MaxEstimatedUsdPerRun <= 0 || Rules.MinQualityScore is < 0 or > 1
             || Rules.MaxLatencyMs <= 0 || Rules.MinAllowedReplicas < 1
+            || Rules.MaxIncidentRetries is < 1 or > 10
             || !Rules.HumanApprovalRequired || Rules.AllowCloudWrites)
         {
             throw new InvalidOperationException("Guardrails weaken mandatory demo safety controls.");
         }
+    }
+
+    /// <summary>Never let a model, agent or presentation bypass the incident safety gate.</summary>
+    public GuardDecision EvaluateIncidentWorkflow(double quality, int proposedRetries)
+    {
+        if (proposedRetries < 0 || proposedRetries > Rules.MaxIncidentRetries)
+            return new(false, "INCIDENT_RETRY_LIMIT");
+        if (double.IsNaN(quality) || double.IsInfinity(quality) || quality is < 0 or > 1)
+            return new(false, "INVALID_QUALITY_SCORE");
+        if (quality < 0.90) return new(false, "QUALITY_BELOW_90_PERCENT");
+        return new(true, "POLICY_PASSED_APPROVAL_REQUIRED");
     }
 
     /// <summary>Enforce autoscaling safety in the backend, not in the model response.</summary>
