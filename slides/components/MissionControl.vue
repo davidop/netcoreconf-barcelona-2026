@@ -19,10 +19,14 @@ const visible = computed(() => currentEvents.value.slice(0,position.value))
 const last = computed(() => visible.value.at(-1))
 const gate = computed(() => [...visible.value].reverse().find(x => x.gate !== 'NONE'))
 const percent = computed(() => currentEvents.value.length ? Math.round(position.value/currentEvents.value.length*100) : 0)
-const visualState = computed(() => last.value?.kind.includes('rollback') ? 'rollback'
-  : last.value?.gate === 'DENY' ? 'blocked'
-  : last.value?.kind.includes('approval') ? 'approval'
-  : last.value?.kind.includes('completed') ? 'success' : 'planning')
+const visualState = computed(() => {
+  const event = last.value
+  if (event?.kind === 'mission.recovered' || event?.kind.includes('rollback')) return 'rollback'
+  if (event?.kind === 'mission.blocked' || event?.gate === 'DENY') return 'blocked'
+  if (event?.kind === 'mission.completed') return 'success'
+  if (event?.kind.startsWith('approval')) return 'approval'
+  return 'planning'
+})
 const localApiEnabled = computed(() => typeof location !== 'undefined' && ['localhost','127.0.0.1'].includes(location.hostname))
 
 function stop() {
