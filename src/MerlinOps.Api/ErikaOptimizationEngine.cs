@@ -22,7 +22,7 @@ public sealed class ErikaOptimizationEngine(PolicyEngine policy)
             Resource: "/subscriptions/fictional/resourceGroups/demo/providers/Microsoft.App/containerApps/merlinops-api",
             MinReplicas: 3, MaxReplicas: 12, HttpConcurrency: 50,
             Requests24h: 16000, P95LatencyMs: caseId == "missing-metrics" ? null : 720,
-            DailyEstimatedCostUsd: 12.40m, CriticalRisk: caseId == "policy-block");
+            DailyEstimatedCostUsd: 12.40m);
         string evidenceHash = Convert.ToHexString(SHA256.HashData(
             Encoding.UTF8.GetBytes(JsonSerializer.Serialize(evidence)))).ToLowerInvariant();
         var v1 = Execute("v1", evidence);
@@ -66,8 +66,10 @@ public sealed class ErikaOptimizationEngine(PolicyEngine policy)
         }
         else
         {
-            var result = policy.Evaluate(estimatedUsd: 0.42, quality: quality,
-                latencyMs: evidence.P95LatencyMs.Value, criticalRisk: evidence.CriticalRisk);
+            var result = policy.EvaluateContainerAppScaling(estimatedUsd: 0.42, quality: quality,
+                latencyMs: evidence.P95LatencyMs.Value,
+                proposedMinReplicas: caseId == "policy-block" ? 0 : 1,
+                proposedMaxReplicas: evidence.MaxReplicas);
             decision = result.Allowed ? "PASS" : "DENY";
             reason = result.Reason;
             outcome = result.Allowed ? "AWAITING_HUMAN_REVIEW" : "BLOCKED";
@@ -137,7 +139,7 @@ public sealed class ErikaOptimizationEngine(PolicyEngine policy)
     }
 
     private sealed record AppEvidence(string Resource, int MinReplicas, int MaxReplicas,
-        int HttpConcurrency, int Requests24h, int? P95LatencyMs, decimal DailyEstimatedCostUsd, bool CriticalRisk);
+        int HttpConcurrency, int Requests24h, int? P95LatencyMs, decimal DailyEstimatedCostUsd);
 
     private sealed class LocalEvidenceTools
     {
