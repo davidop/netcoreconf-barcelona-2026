@@ -17,7 +17,7 @@ This first slice executes **actual local C# tool-call sequences** against **fict
 | Test case | What is actually done | Expected technical outcome |
 |---|---|---|
 | `finops-success` | v1 invokes nine local adapters, v2 invokes four against the same fixture; evaluate quality and mandatory policy | `PASS`, then `AWAITING_HUMAN_REVIEW`. No approval or publication |
-| `policy-block` | Same comparison; unsafe minReplicas=0 proposal triggers the fixture's critical-risk flag | `DENY` / `BLOCKED`; no approval or deploy events |
+| `policy-block` | Same comparison; unsafe minReplicas=0 proposal is rejected by the YAML-backed minimum-replicas policy enforced in the .NET backend | `DENY` / `BLOCKED`; no approval or deploy events |
 | `quality-rollback` | Quality passes initially, then an explicitly synthetic regression is introduced; a sandbox on-disk workflow manifest is switched from v2 back to v1 | `ROLLED_BACK_LOCAL` only after SHA-256 and active-version checks succeed. **Not Azure rollback** |
 | `missing-metrics` | Omit latency p95 from the input snapshot | `DENY` / `BLOCKED` with reason `MISSING_REQUIRED_LATENCY_METRIC` |
 
