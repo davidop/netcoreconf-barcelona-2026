@@ -63,6 +63,15 @@ public sealed class ErikaEvidenceTests
     }
 
     [Fact]
+    public void Minimum_replica_policy_is_enforced_by_the_backend_not_the_model()
+    {
+        var policy = new PolicyEngine(Path.Combine(AppContext.BaseDirectory, "guardrails.yaml"));
+        Assert.False(policy.EvaluateContainerAppScaling(0.42, 1.0, 720, 0, 12).Allowed);
+        Assert.False(policy.EvaluateContainerAppScaling(0.42, 1.0, 720, 3, 1).Allowed);
+        Assert.True(policy.EvaluateContainerAppScaling(0.42, 1.0, 720, 1, 12).Allowed);
+    }
+
+    [Fact]
     public void All_comparisons_provide_ordered_auditable_events()
     {
         foreach (var scenario in ErikaOptimizationEngine.Cases)
