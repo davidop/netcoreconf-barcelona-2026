@@ -11,6 +11,10 @@
 - Decision 7: **Azure Container Apps as a potential diagnostic target**, not as mandatory application hosting and not a resource to create.
 - Cross-cutting requirement: **Slidev Live Orchestration** with a separated private presenter view and read-only projected Mission Control.
 
+## Final scope is governed by [the ten user decisions](ten-decisions-implementation.md)
+
+The **primary case is MerlinOps optimizing its own incident-resolution workflow**. Container Apps is no longer the central case; it remains an optional secondary synthetic example. Foundry ai-omniroute-dev will be used only after its endpoint and two deployed models are verified and the configuration is reviewed. A2A is preferred for Copilot Studio; protected REST is the fallback only if A2A cannot be validated. All ten choices are listed with status in the linked decision document.
+
 ## Conference demonstration
 
 ```text
@@ -42,9 +46,9 @@ Slidev: projected timeline, evidence / v1-v2 chart, MerlinOps reactions, Replay
 
 ### Érika's three demonstrations (same concrete incident; one narrative)
 
-1. **Improvement**: MAF v1 repeatedly invokes synthetic diagnostic tools; v2 adopts an explicit evidence-collection workflow. Use identical input evidence, record actual local tool counts, real local durations where instrumented, and separate Foundry token usage if verified. Apply exact quality gates and explain the proposal. No automatic approval.
-2. **Governance**: a deliberately unsafe recommendation (for example, breaking a critical minimum-replica floor in a **fictional** Container Apps configuration) is **DENY** in the backend before human-approval or change events.
-3. **Late regression**: a synthetic post-change quality drop triggers a **verified local workflow version** restore. Stage notes must say local, not Azure production rollback.
+1. **Improvement**: MAF v1 repeats synthetic **incident-resolution** diagnostic tools; v2 adopts an explicit evidence-collection workflow. Use identical input evidence, record actual local tool counts, real local durations where instrumented, and separate Foundry token usage if verified. Apply exact quality gates and explain the proposal. No automatic approval.
+2. **Governance**: a deliberately unsafe recommendation (for example, increasing incident retries above the backend policy ceiling) is **DENY** in the backend before human-approval or change events.
+3. **Late regression**: a synthetic post-change quality drop triggers a **verified local incident-workflow version** restore. Stage notes must say local, not Azure production rollback.
 
 ### Azure Container Apps decision
 
@@ -54,7 +58,7 @@ Slidev: projected timeline, evidence / v1-v2 chart, MerlinOps reactions, Replay
 
 | Priority | Deliverable | Completion evidence |
 |---|---|---|
-| P0 | Working local **MAF** orchestration and deterministic Guardian workflow; matching v1/v2 fixtures and gates | Real workflow executions, tests for improvement, DENY and verified local rollback |
+| P0 | Working local **MAF** incident orchestration and deterministic Guardian workflow; matching v1/v2 synthetic fixtures and gates | Real local workflow executions, measured local telemetry, tests for improvement, DENY and verified local rollback |
 | P0 | **Foundry model** invocation for reasoning/explanations using an existing authorized project and Entra identity where compatible | Explicitly validated model response and latency/usage provenance; local fallback |
 | P0 | **Copilot Studio** agent invokes a protected MAF endpoint/agent over a supported, environment-verified connector | Real invocation, trace ID and a response in Copilot Studio; negative authorization tests |
 | P0 | **Slidev** displays accurate correlated events and supports private presenter commands with read-only projection | Browser E2E and actual event timing; safe replay fallback |
