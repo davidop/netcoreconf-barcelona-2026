@@ -43,11 +43,11 @@ La implementación actual ejecuta un **grafo real de Microsoft Agent Framework (
 
 ## 🎯 Érika-first: one end-to-end improvement, with evidence
 
-**Priority for NetCoreConf:** observe an Azure Container Apps diagnostic workflow, identify redundant tool checks, propose v2, compare both using the same evidence, enforce backend policy and human review, then demonstrate a verified **local** rollback after a synthetic regression. This is **supervised improvement inspired by self-learning**, not a claim of Microsoft's native self-learning feature.
+**Priority for NetCoreConf:** connect **Copilot Studio + Microsoft Agent Framework (.NET 10) + Microsoft Foundry**; use a concrete synthetic Container Apps diagnostic *only as sample data*, optimize v1/v2 using comparable evidence, apply backend governance and demonstrate a verified **local** workflow rollback. No Container App creation is required. This is **supervised improvement inspired by self-learning**, not a claim of Microsoft's native self-learning feature.
 
 The first implemented local comparison runs **9 tool-adapter calls in v1 vs 4 in v2** using identical **synthetic** evidence. Its modeled duration is **not measured wall-clock time**. A critical policy or missing latency blocks approval; PASS means only **awaiting human review**.
 
-[Run Érika's first slice](docs/erika-first-slice.md) · [Collect opt-in read-only evidence from an existing Azure Container App](docs/azure-readonly-evidence.md) · [Track Slidev orchestration](docs/live-orchestration.md)
+[Demo's original three-product architecture](docs/demo-core-architecture.md) · [Run Érika's first slice](docs/erika-first-slice.md) · [Track Slidev orchestration](docs/live-orchestration.md) · [Optional read-only Azure evidence](docs/azure-readonly-evidence.md)
 
 **No real Azure data has been read through this implementation yet.** The opt-in diagnostic script never uses Azure write operations; it does not claim p95 latency or actual per-app billing without authoritative data. Public Slidev remains a synthetic Replay demonstration.
 
