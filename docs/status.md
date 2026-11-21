@@ -1,13 +1,35 @@
-# Implementation status (do not overclaim)
+# Implementation status — evidence-oriented
 
-The code and build artefacts determine status. A feature is not verified until the corresponding CI run or live integration has been checked.
+[← Back to README](../README.md) · [Roadmap](roadmap.md) · [CI](https://github.com/davidop/netcoreconf-barcelona-2026/actions/workflows/ci.yml)
 
-**Implemented / awaiting CI:** .NET 10 synthetic scenario API; fail-closed YAML guardrails; SQLite run snapshots; simulated SSE; three synthetic Replay datasets; Slidev presentation and Mission Control; procedural 3D MerlinOps with reduced-motion fallback; deterministic tests.
+## Implemented and CI-validated
 
-**Scaffold / pending:** Agent Framework preview SDK smoke workflow, Aspire AppHost, Terraform opt-in configuration, GitHub Pages manual publish, Playwright tests, CI workflows.
+- .NET 10 API, three locally simulated scenarios, YAML fail-closed policy and SQLite synthetic run snapshots.
+- Microsoft Agent Framework **real graph execution** with four **deterministic local Guardian executors**. MAF is genuinely executing workflow edges but **no generative AI models are connected**.
+- Synthetic SSE, replay files and visible provenance.
+- Slidev presentation, procedural 3D MerlinOps with reduced-motion fallback, Mission Control UI and static GitHub Pages.
+- xUnit **10 tests**, Replay fixtures **4 tests**, privacy sanitizer **5 tests**, browser Playwright tests **2**, build of Slidev/Aspire, Terraform format and validate.
+- Privacy tool produces REVIEW_REQUIRED candidates; it never publishes authentic private traces automatically.
+- Visual assets and docs repository makeover (SVG banners, mascot, technology brand attribution and architecture diagram sources); Markdown/SVG integrity check in CI.
 
-**Not implemented or verified:** real Foundry telemetry and model routing, M365 Agents SDK to GitHub Copilot Harness, actual multiagent AI planning, Entra authentication, Teams HITL authorization, Azure backend policy, Azure state store, production OTel, measured cost savings, real deployment and rollback, authentic captured telemetry, conference dress rehearsal.
+**Prior passing evidence:**
+- [Four CI jobs passed](https://github.com/davidop/netcoreconf-barcelona-2026/actions/runs/44840427893)
+- [Playwright browser E2E passed](https://github.com/davidop/netcoreconf-barcelona-2026/actions/runs/44840482115)
+- [GitHub Pages published successfully](https://github.com/davidop/netcoreconf-barcelona-2026/actions/runs/44845428686)
 
-**Never performed:** creating or modifying resources in Azure. Explicit new user authorization is needed for any cloud write.
+New changes may require a fresh CI run. A passing badge does not imply real Azure integration.
 
-**SDK integration detail:** `src/MerlinOps.Api/MafSimulationEngine.cs` uses Microsoft Agent Framework's real workflow builder and parallel fan-out to four deterministic local functions; its `SIMULATED` event stream is exposed via `/api/runs/maf-simulate`. This is not live generative-agent orchestration and must never be described as such. **Replay privacy:** `tools/sanitize_replay.py` produces local candidates stamped `REVIEW_REQUIRED`; no automatic public publishing occurs.
+## Current limitations and not implemented
+
+- Real Microsoft Foundry token metering, quality evaluations, model routing and observed savings.
+- Real Copilot Studio GitHub Copilot Harness integration via Microsoft 365 Agents SDK; compatibility unverified.
+- Entra ID/OIDC/PKCE, tenant authorization, backend RBAC, verified Teams/Power Automate approval.
+- Azure cloud resources, deployment, auto-rollback or Azure Table/Blob persistent storage.
+- Production OpenTelemetry exporter and immutable compliant event log.
+- An authentic sanitized Replay captured from an authorized production environment.
+- Two full 45-minute dress rehearsals with Érika and David.
+- The README Mission Control SVG is an **illustration**, not an authentic screenshot.
+
+## Safety commitment
+
+**No Azure resources have been created or modified through this implementation workflow.** Azure creation/modification and LIVE are prohibited until separately and explicitly authorized. Local fictional approvals do not grant rights to mutate infrastructure.

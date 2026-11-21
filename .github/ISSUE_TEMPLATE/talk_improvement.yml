@@ -1,0 +1,24 @@
+name: Talk / visual improvement
+description: Suggest visual storytelling, accessibility or presenter-flow improvements.
+title: "[Talk] "
+body:
+  - type: textarea
+    id: slide
+    attributes:
+      label: Slide, scenario or asset affected
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal for Érika / David
+      description: State the audience benefit, visual changes and trade-offs.
+    validations:
+      required: true
+  - type: checkboxes
+    id: standards
+    attributes:
+      label: Visual standards
+      options:
+        - label: Preserves accessibility, trademark respect and truthful provenance.
+          required: true

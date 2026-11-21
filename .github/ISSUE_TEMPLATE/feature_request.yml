@@ -1,0 +1,28 @@
+name: Feature request
+description: Propose a safe increment aligned with the 78 approved decisions.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: User story and value
+      description: Why is the feature useful during the conference or as a reference?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: Measurable tests and documentation/evidence required.
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Requested mode
+      options:
+        - "REPLAY (synthetic, static)"
+        - "SIMULATED (local, deterministic)"
+        - "Future LIVE — planning only, requires separate authorization"
+    validations:
+      required: true

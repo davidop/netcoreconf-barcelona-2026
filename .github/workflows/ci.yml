@@ -9,6 +9,18 @@ permissions:
   contents: read
 
 jobs:
+
+  documentation:
+    name: Docs links + SVG integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate Markdown references and SVG assets (offline)
+        run: python tools/check_docs.py
+
   dotnet:
     runs-on: ubuntu-latest
     steps:

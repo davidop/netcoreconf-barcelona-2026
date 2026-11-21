@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible issue in local .NET, Slidev, Replay or CI.
+title: "[Bug] "
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - "Slidev / Mission Control"
+        - ".NET 10 / MAF workflow"
+        - "Replay / policy / SQLite"
+        - "CI / Playwright / Terraform format"
+        - "Documentation / media assets"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      placeholder: Commands, scenario ID, expected and observed result.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized diagnostics
+      description: No secrets, raw traces, private prompts, tokens or user data.
+  - type: checkboxes
+    id: check
+    attributes:
+      label: Safety
+      options:
+        - label: I have removed secrets and private data.
+          required: true
