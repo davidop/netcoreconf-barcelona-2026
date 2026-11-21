@@ -25,10 +25,20 @@ public sealed class PolicyEngine
         Rules = parser.Deserialize<Guardrails>(File.ReadAllText(policyPath))
             ?? throw new InvalidOperationException("Guardrails policy empty.");
         if (Rules.MaxEstimatedUsdPerRun <= 0 || Rules.MinQualityScore is < 0 or > 1
-            || Rules.MaxLatencyMs <= 0 || !Rules.HumanApprovalRequired || Rules.AllowCloudWrites)
+            || Rules.MaxLatencyMs <= 0 || Rules.MinAllowedReplicas < 1
+            || !Rules.HumanApprovalRequired || Rules.AllowCloudWrites)
         {
             throw new InvalidOperationException("Guardrails weaken mandatory demo safety controls.");
         }
+    }
+
+    /// <summary>Enforce autoscaling safety in the backend, not in the model response.</summary>
+    public GuardDecision EvaluateContainerAppScaling(double estimatedUsd, double quality,
+        int latencyMs, int proposedMinReplicas, int proposedMaxReplicas)
+    {
+        if (proposedMinReplicas < Rules.MinAllowedReplicas || proposedMaxReplicas < proposedMinReplicas)
+            return new(false, "CRITICAL_RISK");
+        return Evaluate(estimatedUsd, quality, latencyMs, criticalRisk: false);
     }
 
     public GuardDecision Evaluate(double estimatedUsd, double quality, int latencyMs, bool criticalRisk)
