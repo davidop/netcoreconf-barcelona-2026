@@ -1,0 +1,40 @@
+name: Generate GitHub social preview PNG
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/banners/social-preview.svg'
+      - 'tools/render_social_preview.py'
+      - '.github/workflows/social-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-and-commit:
+    if: github.repository == 'davidop/netcoreconf-barcelona-2026'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deterministic SVG rasterizer
+        run: python -m pip install --disable-pip-version-check "CairoSVG==2.7.1" "Pillow==11.2.1"
+      - name: Generate and validate 1280x640 social preview
+        run: python tools/render_social_preview.py
+      - name: Commit rendered image to repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add assets/banners/social-preview.png
+          if git diff --cached --quiet; then
+            echo "Rendered image unchanged"
+          else
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'assets: render PNG social preview from original SVG [skip ci]'
+            git push origin HEAD:main
+          fi
