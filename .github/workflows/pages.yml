@@ -38,4 +38,4 @@ jobs:
       url: https://davidop.github.io/netcoreconf-barcelona-2026/
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
