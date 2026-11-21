@@ -2,7 +2,7 @@
 
 [← Back to README](../README.md) · [Current status](status.md) · [Open Issues](https://github.com/davidop/netcoreconf-barcelona-2026/issues)
 
-The **78 approved design decisions** describe the target architecture; delivered code is intentionally a safe, repeatable local slice. This roadmap is ordered by evidence and trust boundaries, **not** by marketing polish.
+The **78 original approved design decisions**, **17 additional case-design choices** and the agreed **Slidev Live Orchestration** requirement describe the target architecture; delivered code is intentionally a safe, repeatable local slice. This roadmap is ordered by evidence and trust boundaries, **not** by marketing polish.
 
 ## Level 0 — public educational reference (implemented, independently tested in CI)
 
@@ -17,6 +17,8 @@ The **78 approved design decisions** describe the target architecture; delivered
 - [ ] Offline package, accessibility audit and speaker dress rehearsal completed and recorded
 
 ## Level 1 — robust local agent engineering
+
+- [ ] [#22 Slidev Live Orchestration](https://github.com/davidop/netcoreconf-barcelona-2026/issues/22): make the presenter console control authenticated .NET session commands while the audience sees a synchronized read-only projection; genuinely live SSE, recovery, v1/v2 evaluations, local rollback and replay fallback. [Detailed requirements](live-orchestration.md). **Not implemented yet.**
 
 - [ ] [#1 Real model-backed Guardian architecture](https://github.com/davidop/netcoreconf-barcelona-2026/issues/1): replace deterministic planners with policy-restricted model-driven agents
 - [ ] [#5 Durable execution and OTel](https://github.com/davidop/netcoreconf-barcelona-2026/issues/5): append-only events, checkpoints, idempotence, correlation and storage contracts
