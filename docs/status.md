@@ -2,6 +2,10 @@
 
 [← Back to README](../README.md) · [Roadmap](roadmap.md) · [CI](https://github.com/davidop/netcoreconf-barcelona-2026/actions/workflows/ci.yml)
 
+## Core priority correction: Copilot Studio + MAF + Foundry
+
+[The original three-product architecture](demo-core-architecture.md) is now the implementation priority. No Container App exists or needs creating. Synthetic Container Apps data is a reproducible case study; the read-only Azure script is optional. Real Copilot Studio and Foundry inference are not yet connected and must not be described as working.
+
 ## New Érika-first vertical slice (feature branch, awaiting CI)
 
 - [Technical walkthrough, source and demo acceptance](erika-first-slice.md).
