@@ -153,6 +153,6 @@ This repository documents **78 approved decisions**, not 78 completed features. 
 
 The project is a community conference sample by **Érika Cepeda and David Oliva Paredes**, **not a Microsoft product or official Microsoft sample**.
 
-**License:** [MIT for original code and original artwork](LICENSE). Third-party logos and trademarks remain subject to [their owners' conditions](assets/brand/README.md). [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Security reporting](SECURITY.md).
+**License:** [MIT for original code and original artwork](LICENSE). Third-party logos and trademarks remain subject to [their owners' conditions](assets/brand/README.md). [Repository presentation setup](docs/repository-setup.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Security reporting](SECURITY.md).
 
 <p align="center"><strong>Magia sí. Observabilidad siempre. Cambios sin autorización, nunca. 🪄</strong></p>
