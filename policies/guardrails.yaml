@@ -3,5 +3,7 @@
 max_estimated_usd_per_run: 1.0
 min_quality_score: 0.85
 max_latency_ms: 3000
+# Demo safety floor for the proposed Container Apps autoscaling setting.
+min_allowed_replicas: 1
 human_approval_required: true
 allow_cloud_writes: false
