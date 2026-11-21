@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850" role="img" aria-label="Illustration of Mission Control. Synthetic UI mockup, not a screenshot"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06142d"/><stop offset=".60" stop-color="#11245b"/><stop offset="1" stop-color="#3b1b85"/></linearGradient>
+<linearGradient id="robe" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#262b87"/><stop offset=".6" stop-color="#5144ba"/><stop offset="1" stop-color="#151c63"/></linearGradient>
+<linearGradient id="hat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1c2a92"/><stop offset=".7" stop-color="#4041a6"/><stop offset="1" stop-color="#7c5ce9"/></linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#ffe3c5"/><stop offset="1" stop-color="#d69a9a"/></linearGradient>
+<linearGradient id="rune" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16439b"/><stop offset="1" stop-color="#0ca9cb"/></linearGradient>
+<linearGradient id="aqua" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5ceefc"/><stop offset=".6" stop-color="#84a5ff"/><stop offset="1" stop-color="#bd86ff"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#36c6f9" stop-opacity=".29"/><stop offset="1" stop-color="#36c6f9" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1600" height="850" rx="24" fill="#071429"/>
+<rect x="30" y="30" width="1540" height="790" rx="22" fill="#0c1d38" stroke="#4379a9" stroke-width="3"/>
+<path d="M54 30 H1546 A24 24 0 0 1 1570 54 V150 H30 V54 A24 24 0 0 1 54 30" fill="#173a61"/>
+<circle cx="77" cy="85" r="13" fill="#66edd2"/><text x="110" y="97" fill="#f3fbff" font-family="Segoe UI,Arial" font-size="43" font-weight="800">MERLINOPS</text>
+<text x="397" y="93" fill="#a5bfdc" font-family="Segoe UI,Arial" font-size="28">MISSION CONTROL</text>
+<rect x="1155" y="52" width="366" height="71" rx="33" fill="#604626" stroke="#e3ba74"/>
+<text x="1338" y="98" text-anchor="middle" fill="#ffdda7" font-size="28" font-weight="750" font-family="Segoe UI,Arial">REPLAY · SYNTHETIC</text>
+<rect x="72" y="181" width="1456" height="76" rx="13" fill="#132e4d" stroke="#3a6489"/>
+<text x="103" y="228" fill="#b6dfff" font-family="Segoe UI,Arial" font-size="31">Escenario: 01 · El ahorro</text>
+<rect x="748" y="193" width="195" height="51" rx="14" fill="#204a75" stroke="#6099cb"/><text x="845" y="226" text-anchor="middle" fill="#eaffff" font-size="25" font-family="Segoe UI,Arial">▶ Reproducir</text>
+<rect x="961" y="193" width="172" height="51" rx="14" fill="#204a75" stroke="#6099cb"/><text x="1047" y="226" text-anchor="middle" fill="#eaffff" font-size="25" font-family="Segoe UI,Arial">Ⅱ Pausar</text>
+<rect x="1149" y="193" width="332" height="51" rx="14" fill="#25376a" stroke="#7e9de8"/><text x="1315" y="226" text-anchor="middle" fill="#d4dbff" font-size="23" font-family="Segoe UI,Arial">SIMULATED SSE</text>
+<line x1="630" y1="285" x2="630" y2="760" stroke="#2f5578" stroke-width="3"/>
+<g transform="translate(330 580) scale(0.83)">
+ <ellipse cx="6" cy="212" rx="222" ry="29" fill="#030e26" opacity=".65"/>
+ <path d="M-154 198 Q-144 47 -60 26 Q5 9 71 29 Q168 70 174 200 Z" fill="url(#robe)" stroke="#8da5ff" stroke-width="3"/>
+ <path d="M-93 67 Q-132 166 -89 200 L-28 192 Q-51 134 -28 75" fill="#172e80" opacity=".82"/>
+ <path d="M38 54 Q114 93 112 195 L53 194 Q76 129 28 67" fill="#3b3dc1" opacity=".65"/>
+ <circle cx="-3" cy="-20" r="96" fill="url(#skin)" stroke="#e7b99d" stroke-width="3"/>
+ <path d="M-75 -75 Q-62 -144 11 -133 Q70 -113 84 -51 Q22 -91 -8 -74 Q-49 -58 -75 -75Z" fill="#171e59"/>
+ <path d="M-123 -99 Q-22 -159 96 -106 Q63 -176 6 -240 Q-30 -279 -45 -288 Q-24 -217 -120 -113 Z" fill="url(#hat)" stroke="#8ea6ff" stroke-width="4"/>
+ <ellipse cx="-9" cy="-98" rx="129" ry="24" transform="rotate(-8 -9 -98)" fill="#5466d6" stroke="#a4b0ff" stroke-width="4"/>
+ <path d="M-65 -157 Q-6 -180 47 -168" stroke="#6be3ff" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+ <circle cx="-35" cy="-20" r="15" fill="#101d44"/><circle cx="39" cy="-20" r="15" fill="#101d44"/>
+ <circle cx="-30" cy="-27" r="5" fill="#fff"/><circle cx="44" cy="-27" r="5" fill="#fff"/>
+ <path d="M-16 34 Q7 54 36 29" fill="none" stroke="#955965" stroke-width="7" stroke-linecap="round"/>
+ <circle cx="-60" cy="23" r="3" fill="#c87884"/><circle cx="-52" cy="31" r="3" fill="#c87884"/>
+ <circle cx="76" cy="25" r="3" fill="#c87884"/><circle cx="69" cy="33" r="3" fill="#c87884"/>
+ <path d="M97 85 Q169 61 195 96" fill="none" stroke="#f2bfae" stroke-width="22" stroke-linecap="round"/>
+ <path d="M158 107 L263 -240" stroke="#b9d7ff" stroke-width="11" stroke-linecap="round"/>
+ <path d="M158 107 L263 -240" stroke="#5163d7" stroke-width="5" stroke-linecap="round"/>
+ <circle cx="263" cy="-240" r="21" fill="#6af1ff" filter="url(#glow)"/>
+ <circle cx="263" cy="-240" r="12" fill="#f4ffff"/>
+ <path d="M6 69 L60 127 L14 158 L-48 116Z" fill="#546be7" opacity=".8" />
+ <circle cx="4" cy="120" r="32" fill="url(#rune)" stroke="#a1f4ff" stroke-width="4"/>
+ <path d="M3 100 L9 117 L28 122 L10 130 L4 148 L-3 130 L-23 122 L-4 115 Z" fill="#d7fdff"/>
+ </g>
+<text x="324" y="763" text-anchor="middle" fill="#dcf4ff" font-family="Segoe UI,Arial" font-size="30" font-weight="700">MerlinOps</text>
+<rect x="674" y="292" width="269" height="115" rx="17" fill="#153556" stroke="#4a7290"/><text x="699" y="340" fill="#8abedc" font-family="Segoe UI,Arial" font-size="19">EVENTOS</text><text x="699" y="383" fill="#a4f5e5" font-family="Segoe UI,Arial" font-size="43" font-weight="800">08 / 12</text>
+<rect x="962" y="292" width="269" height="115" rx="17" fill="#153556" stroke="#4a7290"/><text x="987" y="340" fill="#8abedc" font-family="Segoe UI,Arial" font-size="19">QUALITY GATE</text><text x="987" y="383" fill="#a4f5e5" font-family="Segoe UI,Arial" font-size="43" font-weight="800">PASS</text>
+<rect x="1246" y="292" width="268" height="115" rx="17" fill="#153556" stroke="#4a7290"/><text x="1271" y="340" fill="#8abedc" font-family="Segoe UI,Arial" font-size="19">PROGRESO</text><text x="1271" y="383" fill="#a4f5e5" font-family="Segoe UI,Arial" font-size="43" font-weight="800">67%</text>
+<rect x="680" y="428" width="834" height="13" rx="6" fill="#2f4b6e"/><rect x="680" y="428" width="556" height="13" rx="6" fill="url(#aqua)"/>
+<g><rect x="678" y="462" width="838" height="57" rx="9" fill="#193353"/><circle cx="706" cy="490" r="7" fill="#6cebd3"/><text x="733" y="500" fill="#cfebff" font-size="23" font-family="Segoe UI,Arial">GovernanceGuardian · Policy passed; approval required</text></g><g><rect x="678" y="528" width="838" height="57" rx="9" fill="#132945"/><circle cx="706" cy="556" r="7" fill="#8aa8eb"/><text x="733" y="566" fill="#cfebff" font-size="23" font-family="Segoe UI,Arial">QualityGuardian · Synthetic evaluation 0.94</text></g><g><rect x="678" y="594" width="838" height="57" rx="9" fill="#193353"/><circle cx="706" cy="622" r="7" fill="#8aa8eb"/><text x="733" y="632" fill="#cfebff" font-size="23" font-family="Segoe UI,Arial">FinOpsGuardian · Synthetic cost estimate 0.42 USD</text></g><g><rect x="678" y="660" width="838" height="57" rx="9" fill="#132945"/><circle cx="706" cy="688" r="7" fill="#8aa8eb"/><text x="733" y="698" fill="#cfebff" font-size="23" font-family="Segoe UI,Arial">TelemetryGuardian · Synthetic latency p95 1850ms</text></g>
+<rect x="65" y="773" width="1469" height="29" rx="9" fill="#132f4d"/><text x="800" y="795" text-anchor="middle" fill="#c3d3e7" font-family="Segoe UI,Arial" font-size="17" font-weight="600">ILLUSTRATIVE UI · SYNTHETIC DATA · NOT AN AUTHENTIC SCREENSHOT · LIVE DISABLED</text>
+</svg>

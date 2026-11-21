@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620" viewBox="0 0 1600 620" role="img" aria-label="MerlinOps, El aprendiz de agente. Conferencia NetCoreConf Barcelona 2026">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06142d"/><stop offset=".60" stop-color="#11245b"/><stop offset="1" stop-color="#3b1b85"/></linearGradient>
+<linearGradient id="robe" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#262b87"/><stop offset=".6" stop-color="#5144ba"/><stop offset="1" stop-color="#151c63"/></linearGradient>
+<linearGradient id="hat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1c2a92"/><stop offset=".7" stop-color="#4041a6"/><stop offset="1" stop-color="#7c5ce9"/></linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#ffe3c5"/><stop offset="1" stop-color="#d69a9a"/></linearGradient>
+<linearGradient id="rune" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16439b"/><stop offset="1" stop-color="#0ca9cb"/></linearGradient>
+<linearGradient id="aqua" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5ceefc"/><stop offset=".6" stop-color="#84a5ff"/><stop offset="1" stop-color="#bd86ff"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#36c6f9" stop-opacity=".29"/><stop offset="1" stop-color="#36c6f9" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1600" height="620" fill="url(#bg)"/>
+<circle cx="1230" cy="295" r="380" fill="url(#halo)"/><circle cx="1240" cy="280" r="256" fill="none" stroke="#59bfff" stroke-opacity=".15" stroke-width="2"/>
+<path d="M0 537 Q380 447 700 559 Q1160 664 1600 497 V620 H0Z" fill="#4d2cbd" fill-opacity=".31"/>
+<path d="M0 558 Q470 494 730 569 Q1204 660 1600 540" stroke="#5ae5fe" stroke-opacity=".35" stroke-width="3" fill="none"/>
+<circle cx="40" cy="30" r="2.7" fill="#7decfc" opacity=".6"/><circle cx="137" cy="97" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="234" cy="164" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="331" cy="231" r="1.4" fill="#7decfc" opacity=".6"/><circle cx="428" cy="298" r="2.7" fill="#c6bcff" opacity=".6"/><circle cx="525" cy="365" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="622" cy="432" r="1.4" fill="#7decfc" opacity=".6"/><circle cx="719" cy="499" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="816" cy="566" r="2.7" fill="#c6bcff" opacity=".6"/><circle cx="913" cy="73" r="1.4" fill="#7decfc" opacity=".6"/><circle cx="1010" cy="140" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="1107" cy="207" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="1204" cy="274" r="2.7" fill="#7decfc" opacity=".6"/><circle cx="1301" cy="341" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="1398" cy="408" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="1495" cy="475" r="1.4" fill="#7decfc" opacity=".6"/><circle cx="92" cy="542" r="2.7" fill="#c6bcff" opacity=".6"/><circle cx="189" cy="49" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="286" cy="116" r="1.4" fill="#7decfc" opacity=".6"/><circle cx="383" cy="183" r="1.4" fill="#c6bcff" opacity=".6"/><circle cx="480" cy="250" r="2.7" fill="#c6bcff" opacity=".6"/><circle cx="577" cy="317" r="1.4" fill="#7decfc" opacity=".6"/><circle cx="674" cy="384" r="1.4" fill="#c6bcff" opacity=".6"/>
+<rect x="77" y="52" width="12" height="12" fill="#f25022"/><rect x="93" y="52" width="12" height="12" fill="#7fba00"/><rect x="77" y="68" width="12" height="12" fill="#00a4ef"/><rect x="93" y="68" width="12" height="12" fill="#ffb900"/>
+<text x="119" y="75" fill="#9fd9fe" font-size="20" font-weight="650" font-family="Segoe UI, Arial">MICROSOFT ECOSYSTEM · COMMUNITY SAMPLE</text>
+<text x="73" y="161" fill="#67e4f5" font-size="31" font-weight="800" font-family="Segoe UI, Arial">MerlinOps <tspan fill="#c1a7ff">✦</tspan></text>
+<text x="69" y="253" fill="#f2f8ff" font-size="78" font-weight="900" font-family="Segoe UI, Arial">EL APRENDIZ</text>
+<text x="69" y="332" fill="url(#aqua)" font-size="78" font-weight="900" font-family="Segoe UI, Arial">DE AGENTE</text>
+<rect x="74" y="363" width="200" height="7" rx="4" fill="url(#aqua)"/>
+<text x="74" y="417" fill="#e0eafa" font-size="30" font-family="Segoe UI, Arial">Magia, telemetría y gobernanza bajo control</text>
+<g font-family="Segoe UI, Arial" font-size="17">
+ <rect x="74" y="448" width="123" height="39" rx="18" fill="#4d309d" stroke="#9d86ed"/><text x="96" y="474" fill="#ecdeff">.NET 10</text>
+ <rect x="211" y="448" width="213" height="39" rx="18" fill="#13345b" stroke="#3d8db6"/><text x="233" y="474" fill="#d6f5ff">Agent Framework</text>
+ <rect x="437" y="448" width="126" height="39" rx="18" fill="#13345b" stroke="#3d8db6"/><text x="460" y="474" fill="#d6f5ff">Slidev</text>
+ <rect x="575" y="448" width="126" height="39" rx="18" fill="#2e3267" stroke="#797db6"/><text x="596" y="474" fill="#d7daff">FinOps</text>
+</g>
+<text x="74" y="559" font-family="Segoe UI, Arial" fill="#e4eeff" font-size="22" font-weight="600">NetCoreConf Barcelona 2026</text>
+<text x="74" y="588" font-family="Segoe UI, Arial" fill="#a8bfdf" font-size="18">Érika Cepeda × David Oliva Paredes   ·   45 min</text>
+<g transform="translate(1170 335)"><circle r="258" fill="#567cff" opacity=".05"/></g>
+<path d="M870 298 Q1038 216 1296 282" stroke="#72bafc" stroke-width="5" opacity=".36" stroke-dasharray="8 16" fill="none"/>
+<g transform="translate(1209 372) scale(0.88)">
+ <ellipse cx="6" cy="212" rx="222" ry="29" fill="#030e26" opacity=".65"/>
+ <path d="M-154 198 Q-144 47 -60 26 Q5 9 71 29 Q168 70 174 200 Z" fill="url(#robe)" stroke="#8da5ff" stroke-width="3"/>
+ <path d="M-93 67 Q-132 166 -89 200 L-28 192 Q-51 134 -28 75" fill="#172e80" opacity=".82"/>
+ <path d="M38 54 Q114 93 112 195 L53 194 Q76 129 28 67" fill="#3b3dc1" opacity=".65"/>
+ <circle cx="-3" cy="-20" r="96" fill="url(#skin)" stroke="#e7b99d" stroke-width="3"/>
+ <path d="M-75 -75 Q-62 -144 11 -133 Q70 -113 84 -51 Q22 -91 -8 -74 Q-49 -58 -75 -75Z" fill="#171e59"/>
+ <path d="M-123 -99 Q-22 -159 96 -106 Q63 -176 6 -240 Q-30 -279 -45 -288 Q-24 -217 -120 -113 Z" fill="url(#hat)" stroke="#8ea6ff" stroke-width="4"/>
+ <ellipse cx="-9" cy="-98" rx="129" ry="24" transform="rotate(-8 -9 -98)" fill="#5466d6" stroke="#a4b0ff" stroke-width="4"/>
+ <path d="M-65 -157 Q-6 -180 47 -168" stroke="#6be3ff" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+ <circle cx="-35" cy="-20" r="15" fill="#101d44"/><circle cx="39" cy="-20" r="15" fill="#101d44"/>
+ <circle cx="-30" cy="-27" r="5" fill="#fff"/><circle cx="44" cy="-27" r="5" fill="#fff"/>
+ <path d="M-16 34 Q7 54 36 29" fill="none" stroke="#955965" stroke-width="7" stroke-linecap="round"/>
+ <circle cx="-60" cy="23" r="3" fill="#c87884"/><circle cx="-52" cy="31" r="3" fill="#c87884"/>
+ <circle cx="76" cy="25" r="3" fill="#c87884"/><circle cx="69" cy="33" r="3" fill="#c87884"/>
+ <path d="M97 85 Q169 61 195 96" fill="none" stroke="#f2bfae" stroke-width="22" stroke-linecap="round"/>
+ <path d="M158 107 L263 -240" stroke="#b9d7ff" stroke-width="11" stroke-linecap="round"/>
+ <path d="M158 107 L263 -240" stroke="#5163d7" stroke-width="5" stroke-linecap="round"/>
+ <circle cx="263" cy="-240" r="21" fill="#6af1ff" filter="url(#glow)"/>
+ <circle cx="263" cy="-240" r="12" fill="#f4ffff"/>
+ <path d="M6 69 L60 127 L14 158 L-48 116Z" fill="#546be7" opacity=".8" />
+ <circle cx="4" cy="120" r="32" fill="url(#rune)" stroke="#a1f4ff" stroke-width="4"/>
+ <path d="M3 100 L9 117 L28 122 L10 130 L4 148 L-3 130 L-23 122 L-4 115 Z" fill="#d7fdff"/>
+ </g>
+<g transform="translate(1310 85)"><rect width="178" height="55" rx="13" fill="#102c58" stroke="#5eddf6" stroke-opacity=".5"/><text x="15" y="36" font-size="21">◈</text><text x="49" y="33" fill="#d9edff" font-family="Segoe UI, Arial" font-size="17" font-weight="600">TELEMETRÍA</text></g>
+<g transform="translate(1360 166)"><rect width="178" height="55" rx="13" fill="#102c58" stroke="#b1a1ff" stroke-opacity=".5"/><text x="15" y="36" font-size="21">€</text><text x="49" y="33" fill="#d9edff" font-family="Segoe UI, Arial" font-size="17" font-weight="600">FINOPS</text></g>
+<g transform="translate(1360 445)"><rect width="178" height="55" rx="13" fill="#102c58" stroke="#67e1cd" stroke-opacity=".5"/><text x="15" y="36" font-size="21">✓</text><text x="49" y="33" fill="#d9edff" font-family="Segoe UI, Arial" font-size="17" font-weight="600">CALIDAD</text></g>
+<rect x="928" y="467" width="224" height="58" rx="12" fill="#0a244b" stroke="#5d9dfc" stroke-opacity=".7"/>
+<text x="946" y="492" font-size="14" fill="#82bfe9" font-family="Segoe UI, Arial">GOVERNANCE GATE</text>
+<text x="946" y="513" font-size="15" fill="#8ef5d5" font-family="Segoe UI, Arial" font-weight="700">FAIL-CLOSED · VERIFIED</text>
+<rect x="0" y="0" width="1599" height="619" fill="none" stroke="#4269b2" stroke-opacity=".38"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="523" viewBox="0 0 1600 523" role="img" aria-label="Three MerlinOps demonstration scenarios"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06142d"/><stop offset=".60" stop-color="#11245b"/><stop offset="1" stop-color="#3b1b85"/></linearGradient>
+<linearGradient id="robe" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#262b87"/><stop offset=".6" stop-color="#5144ba"/><stop offset="1" stop-color="#151c63"/></linearGradient>
+<linearGradient id="hat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1c2a92"/><stop offset=".7" stop-color="#4041a6"/><stop offset="1" stop-color="#7c5ce9"/></linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#ffe3c5"/><stop offset="1" stop-color="#d69a9a"/></linearGradient>
+<linearGradient id="rune" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#16439b"/><stop offset="1" stop-color="#0ca9cb"/></linearGradient>
+<linearGradient id="aqua" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5ceefc"/><stop offset=".6" stop-color="#84a5ff"/><stop offset="1" stop-color="#bd86ff"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#36c6f9" stop-opacity=".29"/><stop offset="1" stop-color="#36c6f9" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs><rect width="1600" height="523" rx="32" fill="#09162e"/><g transform="translate(47 67)">
+<rect width="485" height="392" rx="27" fill="#122958" stroke="#61e4f4" stroke-opacity=".35" stroke-width="3"/>
+<rect x="26" y="25" width="82" height="82" rx="20" fill="#61e4f4" fill-opacity=".16" stroke="#61e4f4" stroke-opacity=".5"/>
+<text x="67" y="88" text-anchor="middle" font-size="61" font-weight="700" font-family="Segoe UI Symbol, Arial" fill="#61e4f4">€</text>
+<text x="27" y="156" fill="#61e4f4" font-size="23" font-weight="800" font-family="Segoe UI,Arial">01 · EL AHORRO</text>
+<text x="27" y="212" fill="#fff" font-size="35" font-weight="750" font-family="Segoe UI,Arial">FinOps optimization</text>
+<text x="27" y="261" fill="#c2d6f2" font-size="20" font-family="Segoe UI,Arial">Modelo · tokens · latencia · calidad</text>
+<rect x="27" y="308" width="431" height="56" rx="12" fill="#06182d" fill-opacity=".62" stroke="#61e4f4" stroke-opacity=".5"/>
+<text x="48" y="344" fill="#61e4f4" font-size="20" font-weight="800" font-family="Consolas,Arial">QUALITY GATE  →  APPROVAL</text>
+</g><g transform="translate(558 67)">
+<rect width="485" height="392" rx="27" fill="#482244" stroke="#f493aa" stroke-opacity=".35" stroke-width="3"/>
+<rect x="26" y="25" width="82" height="82" rx="20" fill="#f493aa" fill-opacity=".16" stroke="#f493aa" stroke-opacity=".5"/>
+<text x="67" y="88" text-anchor="middle" font-size="61" font-weight="700" font-family="Segoe UI Symbol, Arial" fill="#f493aa">⊘</text>
+<text x="27" y="156" fill="#f493aa" font-size="23" font-weight="800" font-family="Segoe UI,Arial">02 · EL ESCUDO</text>
+<text x="27" y="212" fill="#fff" font-size="35" font-weight="750" font-family="Segoe UI,Arial">Governance block</text>
+<text x="27" y="261" fill="#c2d6f2" font-size="20" font-family="Segoe UI,Arial">Riesgo crítico · política · bloqueo</text>
+<rect x="27" y="308" width="431" height="56" rx="12" fill="#06182d" fill-opacity=".62" stroke="#f493aa" stroke-opacity=".5"/>
+<text x="48" y="344" fill="#f493aa" font-size="20" font-weight="800" font-family="Consolas,Arial">CRITICAL RISK  →  DENY</text>
+</g><g transform="translate(1069 67)">
+<rect width="485" height="392" rx="27" fill="#2f2162" stroke="#c6a0ff" stroke-opacity=".35" stroke-width="3"/>
+<rect x="26" y="25" width="82" height="82" rx="20" fill="#c6a0ff" fill-opacity=".16" stroke="#c6a0ff" stroke-opacity=".5"/>
+<text x="67" y="88" text-anchor="middle" font-size="61" font-weight="700" font-family="Segoe UI Symbol, Arial" fill="#c6a0ff">↶</text>
+<text x="27" y="156" fill="#c6a0ff" font-size="23" font-weight="800" font-family="Segoe UI,Arial">03 · LA REVERSIÓN</text>
+<text x="27" y="212" fill="#fff" font-size="35" font-weight="750" font-family="Segoe UI,Arial">Quality rollback</text>
+<text x="27" y="261" fill="#c2d6f2" font-size="20" font-family="Segoe UI,Arial">Regresión · canary · recuperación</text>
+<rect x="27" y="308" width="431" height="56" rx="12" fill="#06182d" fill-opacity=".62" stroke="#c6a0ff" stroke-opacity=".5"/>
+<text x="48" y="344" fill="#c6a0ff" font-size="20" font-weight="800" font-family="Consolas,Arial">REGRESSION  →  ROLLBACK</text>
+</g></svg>
