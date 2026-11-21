@@ -65,16 +65,15 @@ layout: default
 # La arquitectura detrás del hechizo
 
 <div class="architecture">
-  <div class="arch-node high">Slidev · Mission Control<br><small>LIVE / REPLAY / SIMULATED</small></div>
-  <div class="arch-arrow">↓ SSE / REST</div>
-  <div class="arch-node">ASP.NET Core .NET 10<br><small>API, Event Store, auditoría, políticas</small></div>
-  <div class="arch-arrow">↓</div>
-  <div class="arch-node accent">MerlinOps · Microsoft Agent Framework<br><small>Planificación y delegación especializada</small></div>
+  <div class="arch-node high">Copilot Studio · Entrada<br><small>A2A preferido / REST protegido (PENDIENTE)</small></div>
+  <div class="arch-arrow">↓ misión de incidencias</div>
+  <div class="arch-node accent">MerlinOps · Microsoft Agent Framework · .NET 10<br><small>Orquestación real local, workflows v1/v2</small></div>
   <div class="arch-grid">
     <div>📈 Telemetry</div><div>💶 FinOps</div><div>🧪 Quality</div><div>🛡️ Governance</div>
   </div>
-  <div class="arch-arrow">↓ gates deterministas + aprobación humana</div>
-  <div class="arch-node">Foundry · Copilot Studio · Teams · Terraform<br><small>Conectores LIVE sujetos a autorización y validación</small></div>
+  <div class="arch-node">Microsoft Foundry · Modelos principal + respaldo<br><small>Inferencia real PENDIENTE DE VALIDAR</small></div>
+  <div class="arch-arrow">↓ Policy-as-Code y Quality Gates en .NET</div>
+  <div class="arch-node high">Slidev · Mission Control<br><small>Comparación, auditoría, gobernanza · SIMULATED / REPLAY</small></div>
 </div>
 
 <!-- Las rutas LIVE no se han comprobado. La demo local utiliza adaptadores deterministas. -->
@@ -86,9 +85,9 @@ layout: default
 # Los tres hechizos
 
 <div class="triple">
-  <div class="scenario-card"><span>01</span><h2>El ahorro</h2><p>Optimización de modelos con límites de costes, latencia y calidad.</p><strong>LIVE previsto</strong></div>
-  <div class="scenario-card"><span>02</span><h2>El escudo</h2><p>Una propuesta arriesgada choca contra las políticas.</p><strong>LIVE previsto</strong></div>
-  <div class="scenario-card"><span>03</span><h2>La reversión</h2><p>Regresión de calidad, detección y auto-rollback.</p><strong>REPLAY</strong></div>
+  <div class="scenario-card"><span>01</span><h2>El aprendiz mejora</h2><p>v1 repite consultas. v2 reduce llamadas sin perder evidencias.</p><strong>MAF LOCAL</strong></div>
+  <div class="scenario-card"><span>02</span><h2>El escudo de Érika</h2><p>Una propuesta aumenta los reintentos por encima del límite.</p><strong>DENY EN .NET</strong></div>
+  <div class="scenario-card"><span>03</span><h2>La recuperación</h2><p>Regresión simulada y restauración verificada de v1 local.</p><strong>ROLLBACK LOCAL</strong></div>
 </div>
 
 <div class="slide-caption">No confundiremos las métricas sintéticas con facturación o telemetría real.</div>
@@ -143,9 +142,9 @@ layout: default
 <div class="split-flow">
   <div class="big-word rollback">↩</div>
   <div>
-    <h2>Progressive Delivery + Auto-Rollback</h2>
-    <p>Despliegue canary → degradación sintética de calidad → Quality Gate → rollback preautorizado → recuperación.</p>
-    <p><strong>REPLAY:</strong> secuencia reproducible; no se afirma haber modificado Azure.</p>
+    <h2>Quality Gate + Restauración local verificable</h2>
+    <p>Se activa v2 en un manifiesto de pruebas local → degradación sintética → Quality Gate → restauración de v1 → comprobación SHA-256.</p>
+    <p><strong>SIMULATED:</strong> el incidente es ficticio. La restauración del archivo es real y local; nunca un rollback de Azure.</p>
   </div>
 </div>
 
@@ -153,16 +152,16 @@ layout: default
 layout: default
 ---
 
-# ¿Cuánto cuesta una decisión?
+# ¿Cómo probamos que ha mejorado?
 
 <div class="metrics-line">
-  <div><strong>0,42 USD</strong><small>Estimación ficticia por flujo</small></div>
-  <div><strong>0,94</strong><small>Calidad sintética</small></div>
-  <div><strong>1.850 ms</strong><small>Latencia sintética p95</small></div>
+  <div><strong>9 → 4</strong><small>Llamadas locales contadas (fixture)</small></div>
+  <div><strong>55,6%</strong><small>Reducción de llamadas en el caso sintético</small></div>
+  <div><strong>4/4</strong><small>Guardianes MAF completados</small></div>
 </div>
 
-<p>Budget objetivo de plataforma: <b>115 €/mes</b>. No equivale a un tope garantizado en facturación.</p>
-<p>El sistema distinguirá <b>estimación</b>, <b>medición</b> y <b>ahorro efectivamente observado</b>.</p>
+<p><b>Tiempo de proceso</b>: medido localmente en cada ejecución; no representa latencia cloud.</p>
+<p><b>Foundry</b>: tokens, coste y latencia solo cuando la inferencia real esté conectada y verificada. Presupuesto objetivo: 115 €/mes.</p>
 
 ---
 layout: default
