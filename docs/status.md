@@ -5,6 +5,7 @@
 ## New Érika-first vertical slice (feature branch, awaiting CI)
 
 - [Technical walkthrough, source and demo acceptance](erika-first-slice.md).
+- [Opt-in Azure Container Apps read-only evidence probe](azure-readonly-evidence.md): new local PowerShell tool for authorized Azure CLI configuration and basic metric reads; output private and quality remains INCOMPLETE until p95/cost attribution is independently verified. **Not yet tested against a real Azure resource.**
 - Local synthetic Container Apps comparison: v1 actually calls nine local tool adapters; v2 calls four against identical immutable evidence.
 - Deterministic backend gates reject unsafe proposals and missing required latency data, with no approval or cloud-write capability.
 - A local manifest file is switched from v2 back to v1 and its SHA-256 verified for the rollback case. This is a **local demo sandbox**, not an Azure rollback.
