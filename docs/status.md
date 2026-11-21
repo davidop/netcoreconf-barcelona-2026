@@ -19,6 +19,12 @@
 
 New changes may require a fresh CI run. A passing badge does not imply real Azure integration.
 
+## Approved next step: Slidev Live Orchestration
+
+- [Architectural requirement and acceptance criteria](live-orchestration.md) and [issue #22](https://github.com/davidop/netcoreconf-barcelona-2026/issues/22) are recorded. **This is planned, not delivered.**
+- Existing Slidev can start SIMULATED MAF execution and control synthetic Replay. The API currently saves a finished run before emitting delayed SSE events; that is **post-run playback, not real-time orchestration**.
+- Private presenter controls, read-only synchronized projection, v1/v2 live execution, authenticated approval, resuming live events and verifiable local rollback remain to be built and tested.
+
 ## Current limitations and not implemented
 
 - Real Microsoft Foundry token metering, quality evaluations, model routing and observed savings.
