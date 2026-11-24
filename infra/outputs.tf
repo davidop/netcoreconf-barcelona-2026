@@ -11,7 +11,7 @@ output "foundry_mode" {
 output "foundry_project_id" {
   value = var.foundry_mode == "existing" ? (
     var.existing_foundry_project_id != "" ? var.existing_foundry_project_id : null
-  ) : (
+    ) : (
     local.create_foundry ? azapi_resource.foundry_project[0].id : null
   )
   description = "ARM ID for reference, not a claim of deployed/verified inference."
