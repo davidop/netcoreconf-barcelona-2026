@@ -72,6 +72,14 @@ The primary incident workflow now runs **real local MAF orchestration** with fou
 
 **Future LIVE:** Entra authorization, verified human approval, Foundry/Copilot Studio/Teams connectors and Azure deployments. These are **not connected**. Explore [six architecture diagrams](docs/diagrams/README.md) and [security boundaries](docs/security.md).
 
+## 🏗️ Infrastructure as code — Terraform, not manual Azure setup
+
+**Microsoft Foundry is optional to run MAF.** For the agreed three-product LIVE talk, it is the managed inference provider. The preferred choice is to **reuse** the existing `ai-omniroute-dev` project, without creating a second Foundry project or accepting Terraform ownership of existing shared resources.
+
+The `infra/` Terraform template supports **none / existing / create** modes; it is completely disabled by default. It can describe a new Foundry account, project and explicitly selected model deployments for an approved future deployment; Azure Container Apps hosting remains independently optional and off. The current GitHub CI only runs `fmt`, `init -backend=false` and `validate`, **never `apply`**.
+
+Copilot Studio agent definitions have a separate, versioned **Power Platform ALM** lifecycle; the initial [agent design specification](copilot-studio/agent.spec.yaml) is intentionally not a deployable agent. [Terraform architecture, toggles and approval boundaries](infra/README.md) · [Copilot Studio agent ALM](copilot-studio/README.md).
+
 ## 🧑‍🚀 Three MerlinOps missions — same synthetic incident
 
 **Conference protagonist:** MerlinOps improves **its own** incident-resolution workflow. The first local slice executes real MAF Guardian orchestration; cloud model reasoning and Copilot Studio delegation are **not yet wired**.
