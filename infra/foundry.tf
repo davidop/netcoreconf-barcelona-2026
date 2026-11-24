@@ -27,9 +27,9 @@ resource "azapi_resource" "foundry_account" {
       type = "SystemAssigned"
     }
     properties = {
-      customSubDomainName     = var.foundry_account_name
-      allowProjectManagement  = true
-      disableLocalAuth        = true
+      customSubDomainName    = var.foundry_account_name
+      allowProjectManagement = true
+      disableLocalAuth       = true
     }
   }
 
