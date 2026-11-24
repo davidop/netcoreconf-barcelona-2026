@@ -17,6 +17,12 @@
 | 9 | **C** | Érika challenges agent, evaluates evidence and approves/rejects improvement; backend has final policy authority. | Policy DENY is enforced independently; technical PASS is only `AWAITING_HUMAN_REVIEW` and not a real human approval. Presenter role and authenticated approval are later slices. |
 | 10 | **C** | Code in GitHub now; **review before any Copilot Studio or Foundry configuration**. | Changes staged as draft PR. No Azure/cloud resources or agent configuration modified. |
 
+## Infrastructure decision clarified (2026-11-24)
+
+**Foundry is not a mandatory dependency of MAF.** It is the intended model inference provider for the 3-product integrated demo, but local agent workflows, governance and Replay run without it. Azure infrastructure must be **Terraform templated** rather than relying on portal-only manual provisioning. The checked-in [Terraform root](../infra/README.md) defaults to **creating zero resources**, supports reference-only reuse of `ai-omniroute-dev`, and can define an optional new Foundry account/project/model deployments after approval.
+
+Copilot Studio is a separate Power Platform ALM control plane. Keep its agent specification and native exported solution files in Git (see [Copilot Studio ALM](../copilot-studio/README.md)); deploy with supported ALM tooling after explicit review. Neither the speculative agent design contract nor Terraform alone creates a Copilot Studio agent.
+
 ## Conference narrative anchored to the title
 
 **«El aprendiz de agente: magia, telemetría y gobernanza bajo control»**
