@@ -1,0 +1,39 @@
+# NOT a Copilot Studio importable definition. Intent-only spec for owner review.
+# Generate native agent files by exporting from a verified development environment.
+apiVersion: merlinops.demo/v1
+kind: CopilotStudioAgentDesign
+metadata:
+  name: MerlinOps
+  description: "El aprendiz de agente: magia, telemetría y gobernanza bajo control"
+  environment: "EXISTING_DEVELOPMENT_ENVIRONMENT_TO_BE_REVIEWED"
+  status: "DRAFT_NOT_DEPLOYED"
+spec:
+  entry:
+    mission: "Evaluate the synthetic incident INC-2042 by delegating to the MAF supervisor"
+    expectedOutput:
+      - "Correlated diagnostic summary with source provenance"
+      - "v1 and v2 tool-call, quality, security and local elapsed-time comparison"
+      - "Deterministic backend policy PASS/DENY and explicit human review state"
+  integration:
+    preferred: "A2A_AUTHENTICATED_AND_VALIDATED"
+    fallback: "REST_OAUTH2_VALIDATED"
+    openapiSpec: "../contracts/copilot-delegation.openapi.yaml"
+    endpoint: "NOT_CONFIGURED"
+    principal: "NOT_CONFIGURED"
+  runtime:
+    agentFramework: ".NET 10 Microsoft Agent Framework"
+    modelProvider: "Foundry optional ai-omniroute-dev, pending verified deployment and permission"
+    cloudWritesAllowed: false
+    sourceData: "SYNTHETIC_FIXTURE"
+  governance:
+    reviewer: "Erika role, authenticated independently by .NET backend"
+    proposalIsApproval: false
+    evaluationPassIsApproval: false
+    rejectMissingEvidence: true
+    rejectUnauthorizedChange: true
+  observability:
+    correlationRequired: true
+    realLocalExecutionTelemetry: true
+    modelTokensOnUnconnectedFallback: null
+    assumedSavingsOnUnconnectedFallback: null
+    fallback: "REPLAY_SYNTHETIC"
