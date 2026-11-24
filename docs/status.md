@@ -8,6 +8,13 @@
 
 New `IncidentImprovementEngine` executes real MAF local Guardian graph and counted local tool calls on one versioned synthetic incident; records actual local elapsed time separately from synthetic source metrics. New slide #7 shows improvement, backend DENY and local rollback with guarded provenance. `/api/integrations/preflight` reports Foundry/Copilot NOT_CONNECTED without credentials or network calls.
 
+## Terraform template update — 2026-11-24
+
+- [Foundry and optional Azure infrastructure as code](../infra/README.md): zero-create defaults, reuse existing `ai-omniroute-dev` without importing ownership, or opt-in new account/project/model deployment template.
+- Azure Container Apps hosting no longer follows automatically from enabling Foundry. Optional monitoring/legacy hosting are separately gated and off.
+- [Copilot Studio agent ALM draft](../copilot-studio/README.md): reviewed spec is **NOT deployable** until real native agent definitions are exported and verified.
+- Terraform CI does **not** provision Azure. A passing validate result is not a working Foundry connection, a successful deployment, or a runtime test.
+
 ## Core priority correction: Copilot Studio + MAF + Foundry
 
 [The original three-product architecture](demo-core-architecture.md) is now the implementation priority. No Container App exists or needs creating. Synthetic Container Apps data is a reproducible case study; the read-only Azure script is optional. Real Copilot Studio and Foundry inference are not yet connected and must not be described as working.
