@@ -1,0 +1,8 @@
+# DEMONSTRATION ONLY — DOES NOT PROVISION ANYTHING BY DEFAULT.
+bootstrap_enabled = false
+# supply subscription_id / tenant_id privately only when approved
+# subscription_id = "<subscription-id>"
+# tenant_id       = "<tenant-id>"
+# location        = "<approved-location>"
+# identity_resource_group_name = "rg-merlinops-github-plan"
+# identity_name = "id-merlinops-github-plan"

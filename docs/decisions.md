@@ -128,3 +128,90 @@ The present implementation does **not** yet support actual runtime streaming, pr
 - Gate decisions in the backend and separately record proposal, evidence, policy version, technical decision, authorized person and actual outcome. Reject missing policy/metrics, exceeded limits and unapproved actions.
 - Always label **LIVE / SIMULATED / REPLAY** and observed / estimated / synthetic metrics. An `agent.completed` event must not mark the full mission successful.
 - Do not claim Teams, Azure, Foundry, or self-learning integrations are real until validated. Maintain a conference-ready replay/offline fallback.
+
+## Further accepted decisions from the user (18–77)
+
+The user requested **no more questionnaires: start building the demo now**, with Érika's acceptance criteria as the primary prioritization. The following options were selected as **D** throughout the follow-up questionnaire. They are **target decisions, not claims of completed implementation**.
+
+| # | Selected | Requirement |
+|---:|:---:|---|
+| 18 | D | Supervised improvement inspired by self-learning; native self-learning only if independently validated |
+| 19 | D | Hybrid automatic and presenter-triggered improvement discovery |
+| 20 | D | Hybrid deterministic/AI-generated, versioned v2 proposal |
+| 21 | D | Progressive validation: static checks, sandbox, regressions and security before PR |
+| 22 | D | Hybrid GitHub PR, Actions and Replay contingency |
+| 23 | D | Authenticated Teams/Adaptive Card approval with explicit simulation fallback |
+| 24 | D | Two presenters with one active operator and distinct human-approval authority |
+| 25 | D | Secure handover and supervised operator recovery |
+| 26 | D | Zero Trust Entra/RBAC/private presenter access |
+| 27 | D | Multi-level LIVE → SIMULATED → REPLAY contingency |
+| 28 | D | Aspire orchestration, scripts and offline preflight |
+| 29 | D | CLI/CI/Slidev preflight readiness traffic light |
+| 30 | D | Private stage timer, per-scene budgets and contingency cues |
+| 31 | D | E2E, rehearsal, resilience testing and GO/NO-GO report |
+| 32 | D | Complete public community reference kit |
+| 33 | D | Governed open-source contributions and extension catalog |
+| 34 | D | Pages, Dev Containers/Codespaces and Aspire reproducibility |
+| 35 | D | Semantic releases, conference freeze and workflow/policy versioning |
+| 36 | D | Protected conference branch, Release Candidate, joint review and offline backup |
+| 37 | D | Incident classification, safe recovery, verified hotfix and offline fallback |
+| 38 | D | Presenter incident response with dynamic roles |
+| 39 | D | Transparent, accessible incident/recovery storytelling |
+| 40 | D | Consultative audience participation through QR |
+| 41 | D | Hybrid resilient lightweight mobile voting |
+| 42 | D | Three narrative participation moments |
+| 43 | D | Anonymous voting, abuse protections and isolated public API |
+| 44 | D | Accessible live voting charts with controlled reveal |
+| 45 | D | Compare audience perception with technical evidence |
+| 46 | D | Adaptive poll pacing and presenter override |
+| 47 | D | Aggregated privacy-preserving voting report |
+| 48 | D | WCAG 2.2 AA accessibility target and verification |
+| 49 | D | Adaptive accessible animation, static fallback and correct mission states |
+| 50 | D | Progressive disclosure in public Mission Control |
+| 51 | D | Evidence-linked explanations with optional AI summaries |
+| 52 | D | Multi-level FinOps limits and observed/synthetic provenance |
+| 53 | D | Governed model routing and fallback by role/task/budget |
+| 54 | D | Controlled multimodel retries, checkpoints and reevaluation |
+| 55 | D | End-to-end data classification, minimization, privacy and access |
+| 56 | D | Prompt-injection defense in depth and negative tests |
+| 57 | D | CI security gates for SAST, dependency, auth and policy failures |
+| 58 | D | Supply-chain controls, SBOM, action pinning and provenance |
+| 59 | D | Secretless-first identity, vault as needed and audit |
+| 60 | D | Versioned configuration by environment with preflight |
+| 61 | D | Versioned Policy-as-Code with impact tests and independent approvals |
+| 62 | D | End-to-end auditable decisions with integrity proofs |
+| 63 | D | Governed evidence retention and verifiable deletion |
+| 64 | D | Typed OpenAPI/event contracts and compatibility gates |
+| 65 | D | Durable idempotent execution and state transitions |
+| 66 | D | Isolated controlled concurrency and serialized critical operations |
+| 67 | D | Guardian-specific retry, partial results and fail-closed evidence checks |
+| 68 | D | Multilayer output/schema/evidence/cross-agent validation |
+| 69 | D | Governed agent disagreement resolution and human escalation |
+| 70 | D | Bounded collaboration iterations, budgets and convergence detection |
+| 71 | D | Governed shared context, specialized memory and selective persistence |
+| 72 | D | TTL/version/provenance-validated evidence cache |
+| 73 | D | Fair cold/warm v1/v2 benchmarking on identical evidence |
+| 74 | D | Progressive local rollout, regression monitoring and safe restoration |
+| 75 | D | Verify active local v1 manifest and functionality before RESTORED |
+| 76 | D | End-to-end correlated proposal/evaluation/approval/rollback trace |
+| 77 | D | Auditable evidence pack with structured JSON, visual report, hashes and review |
+
+**Question 78 was never answered.** Do not assume a selection. Subsequent instruction supersedes the questionnaire: build the smallest end-to-end, Érika-focused demonstration immediately, with at most ten new essential questions across the work (ideally zero).
+
+### Implementation prioritization
+
+- **P0:** concrete Container Apps task; deterministic v1/v2 on equal evidence; explicit tools and reproducible quality/call measurements; backend DENY on missing metrics or risk; local rollback with proof; accurately labeled provenance; readable Mission Control.
+- **P1:** real read-only Azure adapters, real-time OTel/SSE evidence, protected presenter controls and authenticated human review.
+- **P2:** rich polls, multimedia, advanced memory, community extensions, cloud deployment and other presentation enhancements.
+
+The first runnable slice is documented at [Érika-first demo](erika-first-slice.md).
+
+## Final scope agreement — ten user answers (supersedes architecture questionnaires)
+
+The owner confirmed ten definitive scope selections on **2026-11-21**, recorded with implementation evidence and outstanding integration gates in [Ten final decisions](ten-decisions-implementation.md). Answers: **1A, 2C, 3A, 4A, 5C, 6C, 7A, 8C, 9C, 10C**.
+
+Primary mission is **MerlinOps optimizing its own incident-resolution workflow**, NOT creating Azure Container Apps. **Copilot Studio in an existing dev environment** → **.NET 10 MAF** → **Foundry project ai-omniroute-dev** (verified main+fallback models) → real evaluation/telemetry → **Slidev Live Orchestration** is the requested conference circuit. Érika remains an active adversarial governance/evaluation actor. GitHub code changes are authorized; any Copilot Studio or Foundry configuration requires review beforehand. Never treat cloud connectors as implemented merely because the architecture names them.
+
+## Infrastructure clarification (2026-11-24)
+
+Foundry is an **optional managed model provider**, not a dependency to execute MAF locally. The LIVE conference objective still includes Copilot Studio → MAF → Foundry, but **all Azure infrastructure must be Terraform templated** with **zero-create defaults** and explicit approval gates. Prefer existing `ai-omniroute-dev` reference-only reuse; optional new Foundry account/project/model deployments are defined under [Terraform](../infra/README.md). Copilot Studio agent definitions use source-controlled [Power Platform ALM](../copilot-studio/README.md), not invented Terraform resources for unsupported platform features. No cloud writes authorized.

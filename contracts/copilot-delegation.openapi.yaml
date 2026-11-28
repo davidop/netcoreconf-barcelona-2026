@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: MerlinOps Delegation Contract (NOT DEPLOYED)
+  version: 0.1.0
+  description: >-
+    Design-only authenticated REST fallback for Copilot Studio.
+    THIS ROUTE IS NOT IMPLEMENTED OR DEPLOYED IN THE CURRENT API.
+    A2A is preferred when an authenticated agent card and remote endpoint are validated.
+    Do not point a custom connector at the developer-only /api/incident/compare endpoint.
+servers:
+  - url: https://merlinops.example.invalid
+    description: Documentation placeholder. Never deploy or connect to this hostname.
+paths:
+  /api/integrations/copilot/mission:
+    post:
+      summary: Request an incident resolution evaluation
+      operationId: requestIncidentEvaluation
+      description: >-
+        Future authenticated delegation from Copilot Studio to the MerlinOps MAF workflow.
+        Will require Entra access tokens validated for tenant, issuer, audience and scopes.
+        Does NOT approve remediation and does NOT perform cloud writes.
+      security:
+        - MerlinOpsOAuth: [incident.evaluate]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DelegationRequest'
+      responses:
+        '202':
+          description: A mission is accepted for evaluation, not publication or deployment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DelegationReceipt'
+        '400':
+          description: Invalid or unrecognized incident
+        '401':
+          description: Missing or invalid Entra token
+        '403':
+          description: Missing required scope/role
+        '429':
+          description: Controlled concurrency limits exceeded
+components:
+  securitySchemes:
+    MerlinOpsOAuth:
+      type: oauth2
+      description: >-
+        Example only. Replace the organization-level auth URLs with validated
+        tenant-specific Entra endpoints during configuration review.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/organizations/oauth2/v2.0/token
+          scopes:
+            incident.evaluate: Read diagnostic evidence and request a supervised evaluation
+  schemas:
+    DelegationRequest:
+      type: object
+      additionalProperties: false
+      required: [incidentId, correlationId]
+      properties:
+        incidentId:
+          type: string
+          enum: [INC-2042]
+        correlationId:
+          type: string
+          minLength: 8
+          maxLength: 80
+        scenario:
+          type: string
+          enum: [incident-improvement, incident-policy-block, incident-regression, incident-missing-evidence]
+    DelegationReceipt:
+      type: object
+      additionalProperties: false
+      required: [missionId, accepted, status, cloudWritesEnabled]
+      properties:
+        missionId:
+          type: string
+        accepted:
+          type: boolean
+        status:
+          type: string
+          enum: [PENDING_EVALUATION]
+        cloudWritesEnabled:
+          type: boolean
+          enum: [false]

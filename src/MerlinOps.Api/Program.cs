@@ -6,6 +6,8 @@ builder.WebHost.UseUrls(Environment.GetEnvironmentVariable("MERLINOPS_URL") ?? "
 builder.Services.AddSingleton(new PolicyEngine(Path.Combine(AppContext.BaseDirectory, "guardrails.yaml")));
 builder.Services.AddSingleton<SimulationEngine>();
 builder.Services.AddSingleton<MafSimulationEngine>();
+builder.Services.AddSingleton<ErikaOptimizationEngine>();
+builder.Services.AddSingleton<IncidentImprovementEngine>();
 builder.Services.AddSingleton(new SqliteRunStore(
     Environment.GetEnvironmentVariable("MERLINOPS_DB")
     ?? Path.Combine(AppContext.BaseDirectory, "merlinops.db")));
@@ -40,6 +42,32 @@ app.MapGet("/api/config", () => Results.Ok(new
     dataProvenance = "SYNTHETIC", requiresExternalApproval = true
 }));
 app.MapGet("/api/scenarios", () => Results.Ok(SimulationEngine.Scenarios));
+// Safe readiness is metadata only: even a valid URL does NOT mean model/auth connectivity.
+app.MapGet("/api/integrations/preflight", () => Results.Ok(MerlinOpsIntegrationPreflight.InspectEnvironment()));
+
+// Erika's first slice: backend-enforced, entirely local comparisons over synthetic evidence.
+// No authorized real Azure access, publication or Teams approval is implied.
+app.MapGet("/api/erika/cases", () => Results.Ok(ErikaOptimizationEngine.Cases));
+app.MapPost("/api/erika/compare", (ErikaCompareRequest request, ErikaOptimizationEngine engine) =>
+{
+    if (string.IsNullOrWhiteSpace(request.CaseId) ||
+        !ErikaOptimizationEngine.Cases.Contains(request.CaseId, StringComparer.Ordinal))
+        return Results.BadRequest(new { error = "Unknown test case" });
+    return Results.Ok(engine.Compare(request.CaseId));
+});
+
+// Main 2026 conference story: local MAF execution on synthetic incident evidence.
+// This is a developer-only comparison API, NOT a Copilot Studio public endpoint.
+// It cannot approve operations, expose Foundry credentials or modify Azure.
+app.MapGet("/api/incident/cases", () => Results.Ok(IncidentImprovementEngine.Cases));
+app.MapPost("/api/incident/compare", async (
+    IncidentCompareRequest request, IncidentImprovementEngine engine, CancellationToken ct) =>
+{
+    if (string.IsNullOrWhiteSpace(request.CaseId) ||
+        !IncidentImprovementEngine.Cases.Contains(request.CaseId, StringComparer.Ordinal))
+        return Results.BadRequest(new { error = "Unknown incident scenario" });
+    return Results.Ok(await engine.CompareAsync(request.CaseId, cancellationToken: ct));
+});
 
 app.MapPost("/api/runs/simulate", async (StartRun request, SimulationEngine engine, SqliteRunStore store, CancellationToken ct) =>
 {
@@ -95,4 +123,6 @@ app.MapGet("/api/runs/{id}/stream", async (string id, SqliteRunStore store, Http
 app.Run();
 
 public sealed record StartRun(string? Scenario);
+public sealed record ErikaCompareRequest(string? CaseId);
+public sealed record IncidentCompareRequest(string? CaseId);
 public partial class Program { }

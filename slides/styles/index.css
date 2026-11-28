@@ -1,3 +1,4 @@
+@import './conference.css';
 :root {
   --nc-navy: #09162d; --nc-navy-2: #152746; --nc-cyan: #5edcef;
   --nc-violet: #8b76ef; --nc-muted: #a9bad4;

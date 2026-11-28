@@ -1,4 +1,33 @@
-# EXAMPLE ONLY: not authorized to deploy.
+# MerlinOps dry-run by default. DO NOT enable deployment without a reviewed plan.
 subscription_id = "00000000-0000-0000-0000-000000000000"
-deploy_enabled = false
-location = "swedencentral"
+deploy_enabled  = false
+location        = "swedencentral"
+
+# No resources and no Azure data sources: works as an offline template.
+foundry_mode                 = "none"
+enable_observability         = false
+enable_containerapps_hosting = false
+
+# To REFERENCE existing ai-omniroute-dev without Terraform taking ownership:
+# foundry_mode = "existing"
+# existing_foundry_project_id       = "/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.CognitiveServices/accounts/<account>/projects/ai-omniroute-dev"
+# existing_foundry_project_endpoint = "https://<account>.services.ai.azure.com/api/projects/ai-omniroute-dev"
+# deploy_enabled remains false. Do not commit real tenant/resource identifiers.
+
+# NEW Foundry creation, only after separate approval / budget / region review:
+# deploy_enabled      = true
+# foundry_mode        = "create"
+# foundry_account_name = "globally-unique-foundry-name"
+# foundry_project_name = "merlinops-dev"
+# foundry_model_deployments = {
+#   "approved-primary" = {
+#     model_format  = "OpenAI"
+#     model_name    = "<verified-model>"
+#     model_version = "<verified-region-version>"
+#     sku_name      = "<verified-supported-sku>"
+#     capacity      = 1
+#   }
+# }
+# Never apply these settings until the planned resources and prices are reviewed.
+
+# ACA hosting is NOT required for this demo, and remains off.

@@ -3,38 +3,40 @@ theme: seriph
 title: "El aprendiz de agente · NetCoreConf Barcelona 2026"
 info: |
   Magia, telemetría y gobernanza bajo control · Érika Cepeda y David Oliva Paredes
-layout: cover
-class: title-screen
+layout: default
+class: nc-official-slide
 ---
 
-<div class="eyebrow">NETCORECONF BARCELONA 2026 · 45 MINUTOS</div>
+<ConferenceCover />
 
-# El aprendiz<br>de agente <span class="wand">🪄</span>
+<!-- Portada oficial. Érika es la aprendiz y David es Merlín. Textos, retratos, badges y QR editables. -->
 
-### Magia, telemetría y gobernanza bajo control
+---
+layout: default
+class: nc-official-slide
+---
 
-<p class="lead">Microsoft Agent Framework · Microsoft Foundry · Copilot Studio · Azure · Slidev</p>
+<ConferenceSponsors />
 
-<div class="speakers">Érika Cepeda <span>×</span> David Oliva Paredes</div>
+<!-- Diapositiva 2: logos originales de los patrocinadores del evento. -->
 
-<!-- Érika abre con el conflicto de seguridad; David contrapone la autonomía. -->
 
 ---
 layout: default
 ---
 
-# Dos maestros. Dos visiones.
+# La aprendiz y Merlín: dos perspectivas.
 
 <div class="duel">
   <div class="duel-pane">
-    <div class="role">ÉRIKA · LA GUARDIANA</div>
-    <h2>¿Y quién aprueba ese cambio?</h2>
-    <p>Seguridad, calidad, cumplimiento, auditoría y control humano.</p>
+    <div class="role">ÉRIKA · LA APRENDIZ</div>
+    <h2>¿Y si mejoramos el workflow del agente?</h2>
+    <p>Experimentación guiada en Copilot Studio: hipótesis, mejora v2 y demostración.</p>
   </div>
   <div class="duel-pane">
-    <div class="role">DAVID · EL OPTIMIZADOR</div>
-    <h2>¿Y si dejamos que los agentes colaboren?</h2>
-    <p>Automatización, rendimiento, reducción del coste y velocidad.</p>
+    <div class="role">DAVID · MERLÍN</div>
+    <h2>¿Qué dicen los Guardianes?</h2>
+    <p>Arquitectura MAF + Foundry, evidencias, Policy-as-Code y revisión humana.</p>
   </div>
 </div>
 
@@ -65,16 +67,15 @@ layout: default
 # La arquitectura detrás del hechizo
 
 <div class="architecture">
-  <div class="arch-node high">Slidev · Mission Control<br><small>LIVE / REPLAY / SIMULATED</small></div>
-  <div class="arch-arrow">↓ SSE / REST</div>
-  <div class="arch-node">ASP.NET Core .NET 10<br><small>API, Event Store, auditoría, políticas</small></div>
-  <div class="arch-arrow">↓</div>
-  <div class="arch-node accent">MerlinOps · Microsoft Agent Framework<br><small>Planificación y delegación especializada</small></div>
+  <div class="arch-node high">Copilot Studio · Entrada<br><small>A2A preferido / REST protegido (PENDIENTE)</small></div>
+  <div class="arch-arrow">↓ misión de incidencias</div>
+  <div class="arch-node accent">MerlinOps · Microsoft Agent Framework · .NET 10<br><small>Orquestación real local, workflows v1/v2</small></div>
   <div class="arch-grid">
     <div>📈 Telemetry</div><div>💶 FinOps</div><div>🧪 Quality</div><div>🛡️ Governance</div>
   </div>
-  <div class="arch-arrow">↓ gates deterministas + aprobación humana</div>
-  <div class="arch-node">Foundry · Copilot Studio · Teams · Terraform<br><small>Conectores LIVE sujetos a autorización y validación</small></div>
+  <div class="arch-node">Microsoft Foundry · Modelos principal + respaldo<br><small>Inferencia real PENDIENTE DE VALIDAR</small></div>
+  <div class="arch-arrow">↓ Policy-as-Code y Quality Gates en .NET</div>
+  <div class="arch-node high">Slidev · Mission Control<br><small>Comparación, auditoría, gobernanza · SIMULATED / REPLAY</small></div>
 </div>
 
 <!-- Las rutas LIVE no se han comprobado. La demo local utiliza adaptadores deterministas. -->
@@ -86,9 +87,9 @@ layout: default
 # Los tres hechizos
 
 <div class="triple">
-  <div class="scenario-card"><span>01</span><h2>El ahorro</h2><p>Optimización de modelos con límites de costes, latencia y calidad.</p><strong>LIVE previsto</strong></div>
-  <div class="scenario-card"><span>02</span><h2>El escudo</h2><p>Una propuesta arriesgada choca contra las políticas.</p><strong>LIVE previsto</strong></div>
-  <div class="scenario-card"><span>03</span><h2>La reversión</h2><p>Regresión de calidad, detección y auto-rollback.</p><strong>REPLAY</strong></div>
+  <div class="scenario-card"><span>01</span><h2>El aprendiz mejora</h2><p>v1 repite consultas. v2 reduce llamadas sin perder evidencias.</p><strong>MAF LOCAL</strong></div>
+  <div class="scenario-card"><span>02</span><h2>El escudo de Merlín</h2><p>Una propuesta aumenta los reintentos por encima del límite.</p><strong>DENY EN .NET</strong></div>
+  <div class="scenario-card"><span>03</span><h2>La recuperación</h2><p>Regresión simulada y restauración verificada de v1 local.</p><strong>ROLLBACK LOCAL</strong></div>
 </div>
 
 <div class="slide-caption">No confundiremos las métricas sintéticas con facturación o telemetría real.</div>
@@ -109,6 +110,18 @@ layout: default
 layout: default
 ---
 
+# Merlín: ¿de verdad ha aprendido MerlinOps?
+
+<div class="demo-context">MerlinOps mejora su PROPIO workflow de resolución de incidencias. Cuatro Guardianes en MAF, evidencias iguales para v1/v2, telemetría de la ejecución local y políticas fuera del LLM.</div>
+
+<IncidentImprovement />
+
+<!-- ÉRIKA (aprendiz): propone y ejecuta la mejora v1/v2. DAVID (Merlín): presenta 9 vs 4 llamadas medidas sobre fixtures sintéticos, valida Guardianes, gobernanza y rollback local. MAF real; Foundry y Copilot Studio NO CONECTADOS. -->
+
+---
+layout: default
+---
+
 # El escudo de la gobernanza
 
 <div class="split-flow">
@@ -120,7 +133,7 @@ layout: default
   </div>
 </div>
 
-<!-- Érika bloquea el "hechizo" de David. Mostrar policy-block y el evento gate.evaluated. -->
+<!-- David, en el rol de Merlín, explica el DENY de backend. Érika, la aprendiz, reformula la mejora. -->
 
 ---
 layout: default
@@ -131,9 +144,9 @@ layout: default
 <div class="split-flow">
   <div class="big-word rollback">↩</div>
   <div>
-    <h2>Progressive Delivery + Auto-Rollback</h2>
-    <p>Despliegue canary → degradación sintética de calidad → Quality Gate → rollback preautorizado → recuperación.</p>
-    <p><strong>REPLAY:</strong> secuencia reproducible; no se afirma haber modificado Azure.</p>
+    <h2>Quality Gate + Restauración local verificable</h2>
+    <p>Se activa v2 en un manifiesto de pruebas local → degradación sintética → Quality Gate → restauración de v1 → comprobación SHA-256.</p>
+    <p><strong>SIMULATED:</strong> el incidente es ficticio. La restauración del archivo es real y local; nunca un rollback de Azure.</p>
   </div>
 </div>
 
@@ -141,16 +154,16 @@ layout: default
 layout: default
 ---
 
-# ¿Cuánto cuesta una decisión?
+# ¿Cómo probamos que ha mejorado?
 
 <div class="metrics-line">
-  <div><strong>0,42 USD</strong><small>Estimación ficticia por flujo</small></div>
-  <div><strong>0,94</strong><small>Calidad sintética</small></div>
-  <div><strong>1.850 ms</strong><small>Latencia sintética p95</small></div>
+  <div><strong>9 → 4</strong><small>Llamadas locales contadas (fixture)</small></div>
+  <div><strong>55,6%</strong><small>Reducción de llamadas en el caso sintético</small></div>
+  <div><strong>4/4</strong><small>Guardianes MAF completados</small></div>
 </div>
 
-<p>Budget objetivo de plataforma: <b>115 €/mes</b>. No equivale a un tope garantizado en facturación.</p>
-<p>El sistema distinguirá <b>estimación</b>, <b>medición</b> y <b>ahorro efectivamente observado</b>.</p>
+<p><b>Tiempo de proceso</b>: medido localmente en cada ejecución; no representa latencia cloud.</p>
+<p><b>Foundry</b>: tokens, coste y latencia solo cuando la inferencia real esté conectada y verificada. Presupuesto objetivo: 115 €/mes.</p>
 
 ---
 layout: default
@@ -170,16 +183,10 @@ layout: default
 <p class="footnote">Las capacidades marcadas como LIVE solo se considerarán verificadas tras un ensayo real autorizado.</p>
 
 ---
-layout: center
-class: final-screen
+layout: default
+class: nc-official-slide
 ---
 
-# El poder no está en el hechizo.
+<ConferenceThanks />
 
-## Está en saber cuándo usarlo, cuándo detenerlo y cómo revertirlo.
-
-<p>Érika Cepeda · David Oliva Paredes</p>
-
-<div class="repo-link">github.com/davidop/netcoreconf-barcelona-2026</div>
-
-<!-- Final: la automatización empresarial necesita límites, evidencia y supervisión. -->
+<!-- Cierre original del organizador. La aprobación humana y Policy-as-Code siguen independientes del relato. -->

@@ -20,6 +20,9 @@ jobs:
           python-version: '3.12'
       - name: Validate Markdown references and SVG assets (offline)
         run: python tools/check_docs.py
+      - name: Validate read-only Azure probe syntax and resource scope (offline)
+        shell: pwsh
+        run: ./tools/azure-containerapps-readonly.ps1 -ResourceId '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/demo/providers/Microsoft.App/containerApps/example' -ValidateOnly
 
   dotnet:
     runs-on: ubuntu-latest
@@ -81,3 +84,22 @@ jobs:
         run: terraform -chdir=infra init -backend=false -input=false
       - name: Validate syntax (never apply)
         run: terraform -chdir=infra validate
+      - name: Init GitHub OIDC identity bootstrap without state backend
+        run: terraform -chdir=infra/bootstrap-oidc init -backend=false -input=false
+      - name: Validate OIDC bootstrap with all resources disabled
+        run: terraform -chdir=infra/bootstrap-oidc validate
+
+  speaker-template:
+    name: Speaker PDF packaging contracts (offline)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local speaker-packaging dependencies
+        run: python -m pip install -r tools/requirements-speaker.txt
+      - name: Test official template guardrails and PDF order using synthetic fixtures
+        run: python -m unittest discover -s tests -p 'test_speaker_deck.py' -v
+      # Real organiser PPTX is intentionally not stored in Git or CI.
+      # Final conference assembly is an approved local manual step.

@@ -1,0 +1,105 @@
+name: MerlinOps Azure OIDC preflight (NO APPLY)
+
+# Manual only, and only on reviewed main. This workflow does not provision Azure.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: merlinops-azure-oidc-preflight
+  cancel-in-progress: false
+
+jobs:
+  verify-identity:
+    name: Verify Azure identity and zero-change Terraform plan
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: merlinops-plan
+    timeout-minutes: 15
+    env:
+      ARM_USE_OIDC: "true"
+      TF_VAR_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      TF_VAR_deploy_enabled: "false"
+      TF_VAR_foundry_mode: "existing"
+      TF_VAR_enable_containerapps_hosting: "false"
+      TF_VAR_enable_observability: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Fail safely if the approved OIDC identity has not been configured
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in AZURE_CLIENT_ID AZURE_TENANT_ID AZURE_SUBSCRIPTION_ID; do
+            if [[ -z "${!name:-}" ]]; then
+              echo "::error::Protected environment secret $name is not configured."
+              exit 1
+            fi
+          done
+
+      - name: Sign in with workload identity federation — never a client secret
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Verify selected tenant and subscription without printing identifiers
+        env:
+          EXPECTED_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          EXPECTED_TENANT: ${{ secrets.AZURE_TENANT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_subscription="$(az account show --query id -o tsv)"
+          actual_tenant="$(az account show --query tenantId -o tsv)"
+          if [[ "$actual_subscription" != "$EXPECTED_SUBSCRIPTION" || "$actual_tenant" != "$EXPECTED_TENANT" ]]; then
+            echo "::error::Authenticated Azure tenant/subscription does not match the reviewed environment."
+            exit 1
+          fi
+          echo "OIDC identity authenticated to the selected subscription and tenant."
+          echo "No Azure infrastructure modifications were performed."
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.10.5"
+
+      - name: Validate Terraform without state backend
+        shell: bash
+        run: |
+          terraform -chdir=infra fmt -check -diff -recursive
+          terraform -chdir=infra init -backend=false -input=false
+          terraform -chdir=infra validate
+
+      - name: Enforce a zero-change plan (NO APPLY)
+        shell: bash
+        run: |
+          set +e
+          terraform -chdir=infra plan \
+            -input=false -refresh=false -lock=false -no-color \
+            -detailed-exitcode \
+            -var="deploy_enabled=false" \
+            -var="foundry_mode=existing" \
+            -var="enable_containerapps_hosting=false" \
+            -var="enable_observability=false"
+          code=$?
+          set -e
+          case "$code" in
+            0) echo "Zero-change Terraform plan verified." ;;
+            2) echo "::error::Terraform proposed changes in read-only preflight. STOP."; exit 1 ;;
+            *) echo "::error::Terraform plan failed. Nothing was applied."; exit "$code" ;;
+          esac
+
+      - name: Disconnect Azure session
+        if: always()
+        shell: bash
+        run: az logout || true

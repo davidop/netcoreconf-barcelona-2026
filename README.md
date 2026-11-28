@@ -19,9 +19,20 @@
 
 ---
 
+## 🎨 Editable Slidev conference cover
+The first slide uses the official 16:9 brand artwork with **editable text, speaker portraits, two Microsoft MVP badges and an offline-capable GitHub QR**. The second is the **unmodified original sponsor slide**; the closing slide reuses the official thank-you artwork. Roles: **Érika = the apprentice**; **David = Merlin**. The conference assets are **not the original organiser PowerPoint**; see [asset packaging and provenance](docs/conference-branding.md). Until the local binary asset pack is committed, Slidev deliberately shows a text fallback instead of claiming official artwork has been deployed.
+
+## 🎤 NetCoreConf Barcelona 2026 — speaker requirements (28 Nov)
+
+The organiser requires the **original conference cover AND sponsor slide** in the talk. They are wired into the Slidev deck as its first two slides on the speaker feature branch; the original visual assets must be installed locally (see [conference branding](docs/conference-branding.md)) before they can be published. A local, privacy-safe PDF packager now combines the actual official PowerPoint slides with MerlinOps Slidev content, retaining the original brand artwork. No private speaker registration links or original PPTX are committed to this repository.
+
+**Speaker deadlines: 6 December 2026** (exclusive Eventbrite registration and speaker-dinner RSVP). Dinner is **Friday 11 December**; conference is **Saturday 12 December** in Centre Urquinaona, Barcelona. Individual slot is still to be confirmed in the agenda.
+
+[Speaker briefing, deadlines and private/public boundaries](docs/speaker-briefing-barcelona-2026.md) · [Exact-template PDF assembler](tools/assemble_speaker_deck.py) · [Official deck packaging checks](tests/test_speaker_deck.py)
+
 ## 🪄 What is MerlinOps?
 
-**El aprendiz de agente** es una demo de ingeniería de agentes: **Érika** exige gobernanza y calidad; **David** impulsa automatización y FinOps. **MerlinOps** coordina cuatro Guardianes —Telemetría, FinOps, Calidad y Gobernanza— y demuestra que **una recomendación de IA no equivale a autorización para ejecutar cambios**.
+**El aprendiz de agente** es una demo de ingeniería de agentes: **Érika** interpreta a la aprendiz y propone la optimización; **David** interpreta a Merlín y guía arquitectura, evidencias y gobernanza. **MerlinOps** coordina cuatro Guardianes —Telemetría, FinOps, Calidad y Gobernanza— y demuestra que **una recomendación de IA no equivale a autorización para ejecutar cambios**.
 
 La implementación actual ejecuta un **grafo real de Microsoft Agent Framework (MAF)**: delegación paralela a cuatro ejecutores deterministas locales y evaluación de Quality Gates mediante código. Los datos son **sintéticos** y las integraciones cloud están deshabilitadas.
 
@@ -40,6 +51,16 @@ La implementación actual ejecuta un **grafo real de Microsoft Agent Framework (
 </tr></table>
 
 **Microsoft Agent Framework** · **Copilot Studio (roadmap)** · **Microsoft Foundry (roadmap)** · **OpenTelemetry (roadmap)**
+
+## 🎯 Érika-first: MerlinOps improves its own incident workflow
+
+**Priority for NetCoreConf:** connect **Copilot Studio + Microsoft Agent Framework (.NET 10) + Microsoft Foundry**; use a concrete synthetic Container Apps diagnostic *only as sample data*, optimize v1/v2 using comparable evidence, apply backend governance and demonstrate a verified **local** workflow rollback. No Container App creation is required. This is **supervised improvement inspired by self-learning**, not a claim of Microsoft's native self-learning feature.
+
+The primary incident workflow now runs **real local MAF orchestration** with four Guardians and **9 local diagnostic calls in v1 vs 4 in v2** using the same **synthetic** incident evidence; its local execution duration is observed with Stopwatch (not real cloud latency). The earlier Container Apps comparator remains a secondary example with modeled durations. A critical policy or missing latency blocks approval; PASS means only **awaiting human review**.
+
+[Ten final decisions and actual integration status](docs/ten-decisions-implementation.md) · [Three-product architecture](docs/demo-core-architecture.md) · [Run Érika's first slice](docs/erika-first-slice.md) · [Track Slidev orchestration](docs/live-orchestration.md) · [Optional read-only Azure evidence](docs/azure-readonly-evidence.md)
+
+**No real Azure data has been read through this implementation yet.** The opt-in diagnostic script never uses Azure write operations; it does not claim p95 latency or actual per-app billing without authoritative data. Public Slidev remains a synthetic Replay demonstration.
 
 ## 🎬 See the experience
 
@@ -62,15 +83,27 @@ La implementación actual ejecuta un **grafo real de Microsoft Agent Framework (
 
 **Future LIVE:** Entra authorization, verified human approval, Foundry/Copilot Studio/Teams connectors and Azure deployments. These are **not connected**. Explore [six architecture diagrams](docs/diagrams/README.md) and [security boundaries](docs/security.md).
 
-## 🧑‍🚀 Three demo missions
+## 🏗️ Infrastructure as code — Terraform, not manual Azure setup
 
-| Mission | Purpose | Synthetic local outcome | Intended conference path |
-|---|---|---|---|
-| **01 · El ahorro** | Model routing, cost, latency and quality | PASS → **fictional** approval → synthetic projected 24% reduction | LIVE only after integration/authorization |
-| **02 · El escudo** | Block a critical-risk proposal | **DENY** without downstream approval or deployment | LIVE only after integration/authorization |
-| **03 · La reversión** | Quality regression and recovery | **Fictional** canary, regression and rollback | REPLAY |
+**Microsoft Foundry is optional to run MAF.** For the agreed three-product LIVE talk, it is the managed inference provider. The preferred choice is to **reuse** the existing `ai-omniroute-dev` project, without creating a second Foundry project or accepting Terraform ownership of existing shared resources.
 
-The 24%, 0.42 USD, 0.94 quality score and 1850 ms p95 are **illustrative synthetic fixtures**, not observed costs or telemetry.
+The `infra/` Terraform template supports **none / existing / create** modes; it is completely disabled by default. It can describe a new Foundry account, project and explicitly selected model deployments for an approved future deployment; Azure Container Apps hosting remains independently optional and off. The current GitHub CI only runs `fmt`, `init -backend=false` and `validate`, **never `apply`**.
+
+Copilot Studio agent definitions have a separate, versioned **Power Platform ALM** lifecycle; the initial [agent design specification](copilot-studio/agent.spec.yaml) is intentionally not a deployable agent. [Terraform architecture, toggles and approval boundaries](infra/README.md) · [Copilot Studio agent ALM](copilot-studio/README.md).
+
+## 🧑‍🚀 Three MerlinOps missions — same synthetic incident
+
+**Conference protagonist:** MerlinOps improves **its own** incident-resolution workflow. The first local slice executes real MAF Guardian orchestration; cloud model reasoning and Copilot Studio delegation are **not yet wired**.
+
+| Mission | Question from Érika | What the current local engine proves |
+|---|---|---|
+| **01 · Aprende** | Did v2 really improve the workflow without losing quality? | v1 makes 9 counted local tool calls; v2 makes 4 against the same incident fixture; measured local elapsed time and full evidence trace |
+| **02 · El escudo** | What if the proposed retry budget exceeds policy? | Deterministic backend **DENY** before any human-approval or deployment events |
+| **03 · La reversión** | Can we prove recovery after a late regression? | Synthetic quality regression; actual on-disk **local** workflow manifest restored to v1, SHA-256 verified |
+
+**Source provenance:** fixture values are synthetic, and local duration is observed in .NET using a Stopwatch. Counts are local tool operations, **not Azure API calls**. Foundry tokens/cost are `null` until actual inference is verified. Technical PASS does not mean human approval.
+
+[10 final scope decisions](docs/ten-decisions-implementation.md) · [Érika-first code and tests](docs/erika-first-slice.md)
 
 ## ⚡ Quickstart — no Azure subscription needed
 
@@ -91,12 +124,12 @@ npm install
 npm run dev
 ~~~
 
-Open **Mission Control (slide 6)**. Replay works without any backend; on localhost you can activate **SIMULATED SSE** to execute the real MAF workflow with deterministic local executors.
+Open **Mission Control (slide 6)** for synthetic Replay. Open **Érika's incident self-improvement scene (slide 7)** for the real local MAF v1/v2 comparison. The local API is required for executable tests; public Pages is read-only Replay.
 
 ~~~bash
-curl -X POST http://localhost:5080/api/runs/maf-simulate \
+curl -X POST http://localhost:5080/api/incident/compare \
   -H 'Content-Type: application/json' \
-  -d '{"scenario":"policy-block"}'
+  -d '{"caseId":"incident-improvement"}'
 
 dotnet test tests/MerlinOps.Tests/MerlinOps.Tests.csproj
 ~~~
