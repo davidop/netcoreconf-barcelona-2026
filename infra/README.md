@@ -4,6 +4,17 @@
 
 > Zero resources are provisioned with the checked-in defaults. CI runs `terraform fmt -check`, `init -backend=false` and `validate` only. There are **no Azure credentials**, `plan` against a real subscription or `apply` in CI.
 
+## New subscription and GitHub OIDC preparation — 2026-11-28
+
+The operator identified an Azure MVP subscription and confirmed its tenant GUID matches the **previously selected Copilot Studio environment's GUID**. This matching GUID is a configuration check, not proof of RBAC, network reachability or agent licensing. **Do not commit either ID** to public repository files.
+
+- [Isolated, disabled-by-default Terraform bootstrap for a GitHub read-only managed identity](bootstrap-oidc/README.md).
+- [Manual GitHub Actions OIDC preflight with protected environment and zero-change plan](../.github/workflows/azure-oidc-preflight.yml).
+- Both Azure account/project provisioning and bootstrap remain opt-in with zero resource changes by default.
+- All tenant/subscription/client IDs are configured as *protected environment secrets* only after separately approved bootstrap. This repository does not yet possess an authenticated Azure connection.
+- A Reader role on the bootstrap RG alone is **not** Reader access to a Foundry project in another RG; request that separately and only when needed.
+- The owner has **not authorized** Terraform apply, new identities, Azure role assignments or Copilot Studio/Foundry configuration.
+
 ## Why Foundry?
 
 Foundry is **optional** to run MAF and the local stage demo. It is an **inference provider** for the intended Copilot Studio → MAF → Foundry LIVE session, providing managed model deployments, Entra identity and model usage evidence. It is not required for deterministic agents, tests, replay or policy enforcement.
