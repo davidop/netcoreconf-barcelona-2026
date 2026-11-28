@@ -2,7 +2,8 @@
 # AND an explicitly reviewed terraform apply is authorized.
 #
 # The read-only plan identity is deliberately NOT a Terraform deployment identity.
-# Its Reader assignment is confined to this bootstrap resource group only.
+# The identity bootstrap has no RBAC assignment by default; a separate
+# administrator-approved stage can grant Reader on one explicit resource group.
 locals {
   oidc_subject = format("repo:%s:environment:%s", var.github_repository, var.github_environment)
 }
@@ -36,9 +37,18 @@ resource "azurerm_federated_identity_credential" "github_plan" {
   subject             = local.oidc_subject
 }
 
+# Separate RBAC phase: a Contributor cannot perform this action.
+# Never assign access at the subscription or tenant level from this module.
 resource "azurerm_role_assignment" "plan_reader" {
-  count                = var.bootstrap_enabled ? 1 : 0
-  scope                = azurerm_resource_group.plan_identity[0].id
+  count                = var.bootstrap_enabled && var.grant_reader_role ? 1 : 0
+  scope                = var.reader_target_resource_group_id
   role_definition_name = "Reader"
   principal_id         = azurerm_user_assigned_identity.plan[0].principal_id
+
+  lifecycle {
+    precondition {
+      condition     = length(regexall("^/subscriptions/[0-9A-Fa-f-]{36}/resourceGroups/[^/]+$", var.reader_target_resource_group_id)) == 1
+      error_message = "Reader scope must be a reviewed Azure resource group, never subscription-wide."
+    }
+  }
 }
