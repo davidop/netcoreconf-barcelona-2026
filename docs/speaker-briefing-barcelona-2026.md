@@ -59,7 +59,7 @@ Requires local **LibreOffice** (`soffice`). The script:
 3. Generates the final PDF **official cover → exact official sponsors → technical Slidev pages (omitting the duplicated Slidev title page) → official GRACIAS**. It preserves logos as original PPTX-rendered content and never modifies them.
 4. Writes the result only under the private ignored artefact directory. No Google account, Entra credential or cloud provisioning is required to package it.
 
-**Critical limitation:** this is a PDF packaging workflow for the speaker deliverable, **not an automatic integration of the official sponsor artwork into the public/interactive Slidev web UI**. For the live demo, use the compliant PDF as the opening (cover and sponsors) before switching to local Slidev for MerlinOps. The public website/Slidev alone is not yet a compliant substitute. Do not claim that it is. The official template is deliberately not redistributed without the organiser's consent.
+**Updated 28 November:** the feature PR now contains editable Slidev components for the official cover, a dedicated unchanged sponsor slide, and the original thank-you slide. The **binary artwork is packaged separately** and must be installed locally; a public build that falls back to text is **not yet equivalent to the official visual**. The previously documented compliant PDF stays available as a safety fallback. Do not claim the public site is conference-ready until the artwork is installed, browser-tested and the PR is merged; do not redistribute the source organiser PPTX.
 
 ## Speaker vs demo readiness
 
