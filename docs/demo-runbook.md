@@ -3,6 +3,14 @@
 > **Título:** «El aprendiz de agente: magia, telemetría y gobernanza bajo control».
 > This script follows the [10 final user choices](ten-decisions-implementation.md) and **Érika's acceptance criteria**. Copilot Studio + Microsoft Agent Framework (MAF) + Foundry remains the **target live circuit**; only the local MAF phase is currently connected.
 
+## Conference organiser requirements — received 28 November 2026
+
+**Mandatory:** Use the true **initial cover** and **sponsor** slide from the latest official NetCoreConf Barcelona 2026 PPTX. A standard Slidev-only export does **NOT** yet meet this requirement. Follow [the speaker briefing and local PDF packaging procedure](speaker-briefing-barcelona-2026.md) before the event; the packager preserves the sponsors' original design and places them immediately after the official cover. The public GitHub Pages presentation is an interactive technical preview, not the approved speaker PDF.
+
+**By 6 December:** presenter Eventbrite registration in the `Speakers` category via the private link and dinner RSVP via private Microsoft Forms (do not put either link in Git). **11 December:** dinner, restaurant pending. **12 December:** conference at Centre Urquinaona, 10 Plaça Urquinaona, Barcelona; Eventbrite lists 09:00–18:00 generally, personal session time and room are not yet confirmed.
+
+During rehearsal: switch from the exact-branding compliant PDF to local Slidev for MerlinOps interactive Mission Control; test that handoff and fallback (offline) before presenting. Do not copy the sponsor artwork into Git without organiser permission.
+
 ## Operator setup — no cloud changes
 
 Prerequisites: .NET 10 SDK, Node 22+, npm. No Azure subscription, Container App, Foundry credentials, Copilot Studio environment or Docker required to rehearse this first stage.
