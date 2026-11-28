@@ -45,3 +45,18 @@ variable "github_environment" {
   description = "GitHub protected environment name; matches workflow environment exactly."
   default     = "merlinops-plan"
 }
+
+# Contributor can create the UAMI and federated credential but cannot assign Azure roles.
+# An authorized RBAC administrator must explicitly enable this flag in a separately
+# approved plan, after supplying a resource-group-scoped Reader target.
+variable "grant_reader_role" {
+  description = "Requires Azure RBAC roleAssignments/write (not included in Contributor). OFF by default."
+  type        = bool
+  default     = false
+}
+
+variable "reader_target_resource_group_id" {
+  description = "Optional existing target resource group ARM ID, reviewed by RBAC administrator. Never a subscription-wide scope."
+  type        = string
+  default     = ""
+}
