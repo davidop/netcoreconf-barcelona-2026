@@ -19,6 +19,14 @@
 
 ---
 
+## 🎤 NetCoreConf Barcelona 2026 — speaker requirements (28 Nov)
+
+The organiser requires the **original conference cover AND sponsor slide** in the talk. They are **not** contained in the public Slidev deck yet. A local, privacy-safe PDF packager now combines the actual official PowerPoint slides with MerlinOps Slidev content, retaining the original brand artwork. No private speaker registration links or original PPTX are committed to this repository.
+
+**Speaker deadlines: 6 December 2026** (exclusive Eventbrite registration and speaker-dinner RSVP). Dinner is **Friday 11 December**; conference is **Saturday 12 December** in Centre Urquinaona, Barcelona. Individual slot is still to be confirmed in the agenda.
+
+[Speaker briefing, deadlines and private/public boundaries](docs/speaker-briefing-barcelona-2026.md) · [Exact-template PDF assembler](tools/assemble_speaker_deck.py) · [Official deck packaging checks](tests/test_speaker_deck.py)
+
 ## 🪄 What is MerlinOps?
 
 **El aprendiz de agente** es una demo de ingeniería de agentes: **Érika** exige gobernanza y calidad; **David** impulsa automatización y FinOps. **MerlinOps** coordina cuatro Guardianes —Telemetría, FinOps, Calidad y Gobernanza— y demuestra que **una recomendación de IA no equivale a autorización para ejecutar cambios**.
