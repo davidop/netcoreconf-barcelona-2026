@@ -3,38 +3,40 @@ theme: seriph
 title: "El aprendiz de agente · NetCoreConf Barcelona 2026"
 info: |
   Magia, telemetría y gobernanza bajo control · Érika Cepeda y David Oliva Paredes
-layout: cover
-class: title-screen
+layout: default
+class: nc-official-slide
 ---
 
-<div class="eyebrow">NETCORECONF BARCELONA 2026 · 45 MINUTOS</div>
+<ConferenceCover />
 
-# El aprendiz<br>de agente <span class="wand">🪄</span>
+<!-- Portada oficial. Érika es la aprendiz y David es Merlín. Textos, retratos, badges y QR editables. -->
 
-### Magia, telemetría y gobernanza bajo control
+---
+layout: default
+class: nc-official-slide
+---
 
-<p class="lead">Microsoft Agent Framework · Microsoft Foundry · Copilot Studio · Azure · Slidev</p>
+<ConferenceSponsors />
 
-<div class="speakers">Érika Cepeda <span>×</span> David Oliva Paredes</div>
+<!-- Diapositiva 2: logos originales de los patrocinadores del evento. -->
 
-<!-- Érika abre con el conflicto de seguridad; David contrapone la autonomía. -->
 
 ---
 layout: default
 ---
 
-# Dos maestros. Dos visiones.
+# La aprendiz y Merlín: dos perspectivas.
 
 <div class="duel">
   <div class="duel-pane">
-    <div class="role">ÉRIKA · LA GUARDIANA</div>
-    <h2>¿Y quién aprueba ese cambio?</h2>
-    <p>Seguridad, calidad, cumplimiento, auditoría y control humano.</p>
+    <div class="role">ÉRIKA · LA APRENDIZ</div>
+    <h2>¿Y si mejoramos el workflow del agente?</h2>
+    <p>Experimentación guiada en Copilot Studio: hipótesis, mejora v2 y demostración.</p>
   </div>
   <div class="duel-pane">
-    <div class="role">DAVID · EL OPTIMIZADOR</div>
-    <h2>¿Y si dejamos que los agentes colaboren?</h2>
-    <p>Automatización, rendimiento, reducción del coste y velocidad.</p>
+    <div class="role">DAVID · MERLÍN</div>
+    <h2>¿Qué dicen los Guardianes?</h2>
+    <p>Arquitectura MAF + Foundry, evidencias, Policy-as-Code y revisión humana.</p>
   </div>
 </div>
 
@@ -86,7 +88,7 @@ layout: default
 
 <div class="triple">
   <div class="scenario-card"><span>01</span><h2>El aprendiz mejora</h2><p>v1 repite consultas. v2 reduce llamadas sin perder evidencias.</p><strong>MAF LOCAL</strong></div>
-  <div class="scenario-card"><span>02</span><h2>El escudo de Érika</h2><p>Una propuesta aumenta los reintentos por encima del límite.</p><strong>DENY EN .NET</strong></div>
+  <div class="scenario-card"><span>02</span><h2>El escudo de Merlín</h2><p>Una propuesta aumenta los reintentos por encima del límite.</p><strong>DENY EN .NET</strong></div>
   <div class="scenario-card"><span>03</span><h2>La recuperación</h2><p>Regresión simulada y restauración verificada de v1 local.</p><strong>ROLLBACK LOCAL</strong></div>
 </div>
 
@@ -108,13 +110,13 @@ layout: default
 layout: default
 ---
 
-# Érika: ¿de verdad ha aprendido MerlinOps?
+# Merlín: ¿de verdad ha aprendido MerlinOps?
 
 <div class="demo-context">MerlinOps mejora su PROPIO workflow de resolución de incidencias. Cuatro Guardianes en MAF, evidencias iguales para v1/v2, telemetría de la ejecución local y políticas fuera del LLM.</div>
 
 <IncidentImprovement />
 
-<!-- ÉRIKA: cuestionar calidad y autorización. DAVID: 9 vs 4 llamadas locales y tiempos realmente medidos en código sobre adaptadores sintéticos. MAF real; Foundry/Copilot Studio aún NO CONECTADOS. Los tres casos: mejora supervisada, DENY y rollback de manifiesto local verificado. -->
+<!-- ÉRIKA (aprendiz): propone y ejecuta la mejora v1/v2. DAVID (Merlín): presenta 9 vs 4 llamadas medidas sobre fixtures sintéticos, valida Guardianes, gobernanza y rollback local. MAF real; Foundry y Copilot Studio NO CONECTADOS. -->
 
 ---
 layout: default
@@ -131,7 +133,7 @@ layout: default
   </div>
 </div>
 
-<!-- Érika bloquea el "hechizo" de David. Mostrar policy-block y el evento gate.evaluated. -->
+<!-- David, en el rol de Merlín, explica el DENY de backend. Érika, la aprendiz, reformula la mejora. -->
 
 ---
 layout: default
@@ -181,16 +183,10 @@ layout: default
 <p class="footnote">Las capacidades marcadas como LIVE solo se considerarán verificadas tras un ensayo real autorizado.</p>
 
 ---
-layout: center
-class: final-screen
+layout: default
+class: nc-official-slide
 ---
 
-# El poder no está en el hechizo.
+<ConferenceThanks />
 
-## Está en saber cuándo usarlo, cuándo detenerlo y cómo revertirlo.
-
-<p>Érika Cepeda · David Oliva Paredes</p>
-
-<div class="repo-link">github.com/davidop/netcoreconf-barcelona-2026</div>
-
-<!-- Final: la automatización empresarial necesita límites, evidencia y supervisión. -->
+<!-- Cierre original del organizador. La aprobación humana y Policy-as-Code siguen independientes del relato. -->

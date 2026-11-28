@@ -19,9 +19,12 @@
 
 ---
 
+## 🎨 Editable Slidev conference cover
+The first slide uses the official 16:9 brand artwork with **editable text, speaker portraits, two Microsoft MVP badges and an offline-capable GitHub QR**. The second is the **unmodified original sponsor slide**; the closing slide reuses the official thank-you artwork. Roles: **Érika = the apprentice**; **David = Merlin**. The conference assets are **not the original organiser PowerPoint**; see [asset packaging and provenance](docs/conference-branding.md). Until the local binary asset pack is committed, Slidev deliberately shows a text fallback instead of claiming official artwork has been deployed.
+
 ## 🎤 NetCoreConf Barcelona 2026 — speaker requirements (28 Nov)
 
-The organiser requires the **original conference cover AND sponsor slide** in the talk. They are **not** contained in the public Slidev deck yet. A local, privacy-safe PDF packager now combines the actual official PowerPoint slides with MerlinOps Slidev content, retaining the original brand artwork. No private speaker registration links or original PPTX are committed to this repository.
+The organiser requires the **original conference cover AND sponsor slide** in the talk. They are wired into the Slidev deck as its first two slides on the speaker feature branch; the original visual assets must be installed locally (see [conference branding](docs/conference-branding.md)) before they can be published. A local, privacy-safe PDF packager now combines the actual official PowerPoint slides with MerlinOps Slidev content, retaining the original brand artwork. No private speaker registration links or original PPTX are committed to this repository.
 
 **Speaker deadlines: 6 December 2026** (exclusive Eventbrite registration and speaker-dinner RSVP). Dinner is **Friday 11 December**; conference is **Saturday 12 December** in Centre Urquinaona, Barcelona. Individual slot is still to be confirmed in the agenda.
 
@@ -29,7 +32,7 @@ The organiser requires the **original conference cover AND sponsor slide** in th
 
 ## 🪄 What is MerlinOps?
 
-**El aprendiz de agente** es una demo de ingeniería de agentes: **Érika** exige gobernanza y calidad; **David** impulsa automatización y FinOps. **MerlinOps** coordina cuatro Guardianes —Telemetría, FinOps, Calidad y Gobernanza— y demuestra que **una recomendación de IA no equivale a autorización para ejecutar cambios**.
+**El aprendiz de agente** es una demo de ingeniería de agentes: **Érika** interpreta a la aprendiz y propone la optimización; **David** interpreta a Merlín y guía arquitectura, evidencias y gobernanza. **MerlinOps** coordina cuatro Guardianes —Telemetría, FinOps, Calidad y Gobernanza— y demuestra que **una recomendación de IA no equivale a autorización para ejecutar cambios**.
 
 La implementación actual ejecuta un **grafo real de Microsoft Agent Framework (MAF)**: delegación paralela a cuatro ejecutores deterministas locales y evaluación de Quality Gates mediante código. Los datos son **sintéticos** y las integraciones cloud están deshabilitadas.
 
