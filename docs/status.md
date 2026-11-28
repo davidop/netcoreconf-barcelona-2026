@@ -8,6 +8,10 @@
 
 New `IncidentImprovementEngine` executes real MAF local Guardian graph and counted local tool calls on one versioned synthetic incident; records actual local elapsed time separately from synthetic source metrics. New slide #7 shows improvement, backend DENY and local rollback with guarded provenance. `/api/integrations/preflight` reports Foundry/Copilot NOT_CONNECTED without credentials or network calls.
 
+## Azure subscription identified; GitHub authentication not yet active
+
+As of 2026-11-28, an Azure subscription was identified in the same Entra tenant as the user-selected Copilot Studio environment. Its GUIDs are intentionally **not committed** to this public repository. An isolated [Terraform OIDC bootstrap](../infra/bootstrap-oidc/README.md) and a [manual read-only GitHub Actions preflight](../.github/workflows/azure-oidc-preflight.yml) have been staged in PR #23. They remain disabled until a separately reviewed Azure bootstrap and GitHub protected-environment setup; no Azure access or resource changes were performed. The draft PR's CI status must be reverified after each change.
+
 ## Terraform template update — 2026-11-24
 
 - [Foundry and optional Azure infrastructure as code](../infra/README.md): zero-create defaults, reuse existing `ai-omniroute-dev` without importing ownership, or opt-in new account/project/model deployment template.
