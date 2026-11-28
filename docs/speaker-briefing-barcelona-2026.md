@@ -6,6 +6,12 @@
 **Presenters:** Érika Cepeda and David Oliva Paredes  
 **Event:** Saturday **12 December 2026**, Centre Urquinaona / Centre Politècnic, **Plaça Urquinaona 10, 08010 Barcelona**. Eventbrite currently lists general event time **09:00–18:00**; the individual MerlinOps session slot/room has **NOT been confirmed** by the email. See the [official conference website](https://www.netcoreconf.com/) and [agenda](https://www.netcoreconf.com/barcelona/agenda) for updates.
 
+## Title/version consistency check
+
+The newly provided **28 November 2026 promotional poster** displays **«El aprendiz de agente: magia, telemetría y gobernanza bajo control 🪄»** and credits **Érika Cepeda + David Oliva**. An **older 24 October Sessionize co-speaker invitation** referenced a prior submission title: **«El aprendiz de agente: Copilot Studio, telemetría y mejoras bajo control 🪄»**. Because the invitation predates the current speaker poster, this is a **possible metadata mismatch, not evidence that the final programme is incorrect**. Verify the **current** Sessionize session title before speakers/promotional material are finalised; do not silently overwrite the organisers' submission.
+
+Follow progress and outstanding manual actions in [speaker readiness issue #24](https://github.com/davidop/netcoreconf-barcelona-2026/issues/24). The complete links and invitation contents remain private in the mailbox.
+
 ## Mandatory organiser instructions
 
 | Due date | Task | Owner | Status |
