@@ -2,7 +2,7 @@
 .slidev-layout.nc-official-slide { position:relative; padding:0!important; overflow:hidden; background:#241358; }
 .nc-cover,.nc-sponsors,.nc-thanks { position:absolute; inset:0; isolation:isolate; color:#fff; font-family:'Segoe UI',Inter,Arial,sans-serif; }
 .nc-cover__art,.nc-thanks__art { position:absolute; inset:0; z-index:-1; background-image:linear-gradient(135deg,#9e2f80,#2a195d 60%,#39238d); background-position:center; background-repeat:no-repeat; background-size:cover; }
-.nc-cover__brand-fallback {position:absolute;top:6%;right:4%;font-size:13px;font-weight:800;opacity:.7;pointer-events:none}
+.nc-cover__brand-fallback {display:none;position:absolute;top:6%;right:4%;font-size:13px;font-weight:800;opacity:.7;pointer-events:none}
 .nc-cover__content { position:absolute; left:49.4%;right:3.2%;top:16%;bottom:6%;display:flex;flex-direction:column; }
 .nc-cover__eyebrow {color:#e4c9ff!important;font-size:11px!important;letter-spacing:1.5px;font-weight:800;margin:0 0 10px!important;}
 .nc-cover h1 {font-family:Georgia,Cambria,serif;font-weight:750!important;color:#fff!important;font-size:31px!important;line-height:1.12!important;letter-spacing:-.5px!important;margin:0!important;max-width:none!important;text-shadow:0 2px 6px #35105278;}
