@@ -15,6 +15,11 @@ output "plan_identity_client_id" {
 }
 
 output "plan_identity_reader_scope" {
-  value       = var.bootstrap_enabled ? azurerm_resource_group.plan_identity[0].id : null
-  description = "Limited to the dedicated identity group. No subscription-wide roles."
+  value       = var.bootstrap_enabled && var.grant_reader_role ? var.reader_target_resource_group_id : null
+  description = "Approved resource group only, if an RBAC administrator separately granted Reader."
+}
+
+output "rbac_grant_requested" {
+  value       = var.grant_reader_role
+  description = "False by default; Contributor alone cannot grant roles."
 }
